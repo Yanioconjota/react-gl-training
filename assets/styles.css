@@ -1,0 +1,273 @@
+@import url('normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css');
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 15px;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #551a8b;
+}
+
+ul {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+ul>li {
+  float: left;
+  clear: left;
+  cursor: pointer;
+}
+
+.unstyled-list {
+  padding-left: 0;
+}
+
+.unstyled-list>li {
+  list-style: none;
+}
+
+pre {
+  margin: 0;
+  padding: 15px;
+  background-color: #ad90d7;
+  display: block;
+  float: left;
+  border-radius: 5px;
+}
+
+hr {
+  display: block;
+  float: left;
+  clear: both;
+  width: 100%;
+  border: 1px dashed #ad90d7;
+  margin: 15px 0;
+}
+
+input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 5px 0;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.d-flex {
+  display: flex;
+  width: 100%;
+}
+
+.d-flex.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.d-flex-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.my-5 {
+  margin: 5px 0 !important;
+}
+
+.my-15 {
+  margin: 15px 0 !important;
+}
+
+.my-30 {
+  margin: 30px 0 !important;
+}
+
+.mt-15 {
+  margin-top: 15px !important;
+}
+
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+
+.mt-30 {
+  margin-top: 30px !important;
+}
+
+.mb-30 {
+  margin-bottom: 30px !important;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.py-5 {
+  padding: 5px 0 !important;
+}
+
+.py-15 {
+  padding: 15px 0 !important;
+}
+
+.py-30 {
+  padding: 30px 0 !important;
+}
+
+.pt-15 {
+  padding-top: 15px !important;
+}
+
+.pb-15 {
+  padding-bottom: 15px !important;
+}
+
+.pt-30 {
+  padding-top: 30px !important;
+}
+
+.pb-30 {
+  padding-bottom: 30px !important;
+}
+
+.pillow {
+  border-radius: 5px;
+  width: auto;
+  display: block;
+  float: left;
+  padding: 5px 10px;
+  margin: 15px 0;
+  background-color: #d4ebff;
+}
+
+li.pillow {
+  margin: 5px 0;
+}
+
+.pillow.success {
+  background-color: #48e448;
+  color: #fff;
+}
+
+.pillow.error {
+  background-color: #e4484b;
+  color: #fff;
+}
+
+.pillow.info {
+  background-color: #f56ae9;
+  color: #fff;
+}
+
+.pillow input {
+  color: #551a8b;
+}
+
+.red {
+  color: #e4484b !important;
+}
+
+.green {
+  color: #2ab52a !important;
+}
+
+.bg-lt-green {
+  background-color: #9aff99;
+}
+
+.bg-lter-green {
+  background-color: #c9ffc8;
+}
+
+.bg-lt-red {
+  background-color: #ffccc9;
+}
+
+.bg-lt-orange {
+  background-color: #f2e6a3;
+}
+
+.pillow h1,
+.pillow h2,
+.pillow h3,
+.pillow h4,
+.pillow h5,
+.pillow h6 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.absolute-message {
+  position: absolute;
+  display: block;
+  left: 15px;
+  bottom: 0;
+}
+
+.d-block {
+  display: block;
+  float: left;
+  clear: left;
+}
+
+.split-50 {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.title-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  width: 100%;
+}
+
+.title-logo img,
+.logo {
+  width: 23px;
+  height: 23px;
+  margin-right: 10px;
+}
