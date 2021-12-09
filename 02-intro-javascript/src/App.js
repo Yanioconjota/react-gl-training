@@ -3,9 +3,11 @@ import Arrays from "./bases/Arrays";
 import ConstLet from "./bases/ConstLet";
 import DestructuringArr from "./bases/DestructuringArr";
 import DestructuringObj from "./bases/DestructuringObj";
+import FetchApi from "./bases/FetchApi";
 import Functions from "./bases/Functions";
 import ImportExport from "./bases/ImportExport";
 import ObjectLiteral from "./bases/ObjectLiteral";
+import Promises from "./bases/Promises";
 import TemplateString from "./bases/TemplateString";
 
 function App() {
@@ -26,6 +28,10 @@ function App() {
       <DestructuringArr />
       <hr />
       <ImportExport />
+      <hr />
+      <Promises />
+      <hr />
+      <FetchApi />
     </div>
   );
 }

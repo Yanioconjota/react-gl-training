@@ -1,13 +1,15 @@
 import heroes, { owners } from "../data/heroes";
 
+//find() devuelve el único que cumple con la condición
+const getHeroeById = (id) => heroes.find((el) => el.id === id);
+//filter() devuelve los elementos que cumlen con la condición
+const getHeroeByOwner = (owner) => heroes.filter((el) => el.owner === owner);
+
 function ImportExport() {
   console.log(heroes);
   console.log(owners);
   
-  //find() devuelve el único que cumple con la condición
-  const getHeroeById = (id) => heroes.find((el) => el.id === id);
-  //filter() devuelve los elementos que cumlen con la condición
-  const getHeroeByOwner = (owner) => heroes.filter((el) => el.owner === owner);
+  
 
   console.log(getHeroeById(2));
   console.log(getHeroeByOwner('DC'));
@@ -52,4 +54,8 @@ function ImportExport() {
   );
 }
 
-export default ImportExport;
+export {
+  ImportExport as default,
+  getHeroeById,
+  getHeroeByOwner
+};
