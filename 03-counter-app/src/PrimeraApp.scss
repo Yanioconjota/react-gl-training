@@ -1,4 +1,12 @@
-.App {
+@import './assets/scss/CustomBootstrap.scss';
+
+body {
+  width: 100%;
+  color: white;
+  background-color: #121113;
+}
+
+.PrimeraApp {
   text-align: center;
 }
 
@@ -23,17 +31,15 @@
   padding: 15px;
 }
 
-pre {
-  white-space: pre-wrap;
-  /* Since CSS 2.1 */
-  white-space: -moz-pre-wrap;
-  /* Mozilla, since 1999 */
-  white-space: -pre-wrap;
-  /* Opera 4-6 */
-  white-space: -o-pre-wrap;
-  /* Opera 7 */
-  word-wrap: break-word;
-  /* Internet Explorer 5.5+ */
+code {
+  @extend .bg-dark;
+  padding: 5px 12px;
+  border-radius: 5px;
+}
+
+.code {
+  @extend .text-yellow;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .App-link {
