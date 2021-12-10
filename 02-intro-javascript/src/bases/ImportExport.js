@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import heroes, { owners } from "../data/heroes";
 
 //find() devuelve el único que cumple con la condición
