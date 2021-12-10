@@ -8,7 +8,7 @@ const divRoot = document.querySelector("#root");
 ReactDOM.render(
   <Container>
     <Row>
-      <PrimeraApp />
+      <PrimeraApp saludo="Hola, Soy Goku!"/>
     </Row>
   </Container>
   ,

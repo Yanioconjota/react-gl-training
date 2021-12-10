@@ -27,6 +27,11 @@ body {
   text-align: center;
 }
 
+hr {
+  border: 1px dashed #61dafb;
+  background-color: transparent;
+}
+
 #root {
   padding: 15px;
 }
@@ -35,10 +40,12 @@ code {
   @extend .bg-dark;
   padding: 5px 12px;
   border-radius: 5px;
+  margin: 5px 0;
 }
 
-.code {
+.Code {
   @extend .text-yellow;
+  margin: 5px 0;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
