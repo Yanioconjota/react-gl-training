@@ -1,0 +1,75 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 35px;
+  width: 35px;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 5s linear;
+  }
+}
+
+.Text-center {
+  text-align: center;
+}
+
+#root {
+  padding: 15px;
+}
+
+pre {
+  white-space: pre-wrap;
+  /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.D-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &.J-center {
+    justify-content: center;
+  }
+}
+
+.Title-flex {
+  @extend .D-flex;
+}
+
+.Nav {
+  @extend .D-flex;
+
+  >* {
+    color: #61dafb;
+    text-decoration: none;
+    margin: 5px;
+  }
+}
