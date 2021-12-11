@@ -4,7 +4,7 @@ import { Row, Col, Button } from "react-bootstrap";
 
 const CounterApp = ({ value, title, msg, showButtons, img }) => {
 
-  let [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(value);
   console.log(counter)
 
   const handleAdd = () => {
@@ -13,11 +13,11 @@ const CounterApp = ({ value, title, msg, showButtons, img }) => {
   }
 
   const handleSubstract = () => {
-    setCounter(counter - 1);
+    (counter > 0) && setCounter(counter - 1);
   };
 
   const handleReset = () => {
-    setCounter(counter = 0);
+    setCounter(value = 0);
   };
 
   return (
@@ -29,8 +29,8 @@ const CounterApp = ({ value, title, msg, showButtons, img }) => {
           <p>{msg}<span className="Code">{value | counter}</span></p>
           <div className="btn-group">
             {showButtons && <Button onClick={handleAdd} variant="primary">+1</Button>}
-            {showButtons && <Button onClick={handleSubstract} variant="secondary">-1</Button>}
             {showButtons && <Button onClick={handleReset} variant="info">Reset</Button>}
+            {showButtons && <Button onClick={handleSubstract} variant="secondary">-1</Button>}
           </div>
         </Col>
         { (img && counter >= 5) &&
@@ -55,6 +55,7 @@ CounterApp.defaultProps = {
   title: "Counter App",
   msg: "",
   showButtons: true,
+  value: 0
 };
 
 export default CounterApp;
