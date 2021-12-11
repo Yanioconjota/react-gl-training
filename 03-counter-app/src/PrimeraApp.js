@@ -51,6 +51,33 @@ const PrimeraApp = ({ saludo, subtitulo }) => {
       <code className="d-block Code">{`PrimeraApp.defaultProps = { subtitulo: 'Soy un subtítulo' }`}</code>
       <p className="Code">Asigna valores por defecto a las props</p>
       <p className="Code">{subtitulo}</p>
+      <hr className="my-5" />
+      <p>Tarea:</p>
+      <ol>
+        <li>
+          Crear un nuevo componente dentro de la carpeta SRC llamado CounterApp ✔️
+        </li>
+        <li>El CounterApp debe de ser un Functional Component ✔️</li>
+        <li>
+          El contenido del CounterApp debe de ser:
+          {`<h1>CounterApp</h1>
+              <h2> {value} </h2>`} ✔️
+        </li>
+        <li>
+          Donde "value" es una propiedad enviada desde el padre hacia el
+          componente CounterApp (Debe ser númerica validada con PropTypes) ✔️
+        </li>
+        <li>
+          Reemplazar o agregar en el index.js el componente de {`<PrimeraApp />`}
+          por el componente {`<CounterApp />`} (no se olviden del value que debe
+          de ser un número) ✔️
+        </li>
+        <li>
+          Asegúrense de no tener errores ni warnings (Cualquier warning no
+          usado, comentar el código) ✔️
+        </li>
+      </ol>
+      <hr className="my-5" />
     </Col>
   );
 };
