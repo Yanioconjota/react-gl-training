@@ -10,6 +10,14 @@ body {
   text-align: center;
 }
 
+.CustomGif {
+  display: block;
+  margin-bottom: 12px;
+  &.sm {
+    width: 25%;
+  }
+}
+
 .App-logo {
   height: 35px;
   width: 35px;

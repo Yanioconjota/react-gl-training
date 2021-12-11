@@ -1,6 +1,8 @@
 import { Col } from "react-bootstrap";
 import './PrimeraApp.scss';
+import gif from './assets/img/Roque.gif';
 import PropTypes from 'prop-types';
+import CounterApp from "./CounterApp";
 
 const PrimeraApp = ({ saludo, subtitulo }) => {
   const stringMsg = "Esto es un string!";
@@ -55,20 +57,23 @@ const PrimeraApp = ({ saludo, subtitulo }) => {
       <p>Tarea:</p>
       <ol>
         <li>
-          Crear un nuevo componente dentro de la carpeta SRC llamado CounterApp ✔️
+          Crear un nuevo componente dentro de la carpeta SRC llamado CounterApp
+          ✔️
         </li>
         <li>El CounterApp debe de ser un Functional Component ✔️</li>
         <li>
           El contenido del CounterApp debe de ser:
           {`<h1>CounterApp</h1>
-              <h2> {value} </h2>`} ✔️
+              <h2> {value} </h2>`}{" "}
+          ✔️
         </li>
         <li>
           Donde "value" es una propiedad enviada desde el padre hacia el
           componente CounterApp (Debe ser númerica validada con PropTypes) ✔️
         </li>
         <li>
-          Reemplazar o agregar en el index.js el componente de {`<PrimeraApp />`}
+          Reemplazar o agregar en el index.js el componente de{" "}
+          {`<PrimeraApp />`}
           por el componente {`<CounterApp />`} (no se olviden del value que debe
           de ser un número) ✔️
         </li>
@@ -78,6 +83,13 @@ const PrimeraApp = ({ saludo, subtitulo }) => {
         </li>
       </ol>
       <hr className="my-5" />
+      <CounterApp
+        value={666}
+        title="Counter App tarea"
+        msg="value desde el componente padre: "
+        showButtons={false}
+      />
+      <CounterApp value={0} img={gif} />
     </Col>
   );
 };
