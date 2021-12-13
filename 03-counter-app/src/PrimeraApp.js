@@ -90,6 +90,21 @@ const PrimeraApp = ({ saludo, subtitulo }) => {
         showButtons={false}
       />
       <CounterApp value={0} img={gif} />
+      <hr />
+      <h4 className="text-info">Introducción a las pruebas AAA:</h4>
+      <ul>
+        <li className="Code">Arrange (Arreglar)</li>
+        <li className="Code">Act (Actuar)</li>
+        <li className="Code">Assert (Afirmar)</li>
+        <li>Primeras pruebas</li>
+        <li>Jest</li>
+        <li>Expect</li>
+        <li>toBe</li>
+        <li>Enzyme</li>
+        <li>Comandos útiles en la terminal para pruebas</li>
+        <li>Revisar elementos renderizados en el componente</li>
+        <li>Simular eventos</li>
+      </ul>
     </Col>
   );
 };
