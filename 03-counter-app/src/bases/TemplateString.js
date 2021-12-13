@@ -1,14 +1,12 @@
+function getSaludo(name = 'Sr. Thompson') {
+  return "Hola " + name;
+}
+
 function TemplateString() {
   const nombre = "Homero";
   const apellido = "Thompson";
 
   const nombreCompleto = `${nombre} ${apellido}`;
-
-  console.log(nombreCompleto);
-
-  function getSaludo(name) {
-    return "Hola " + name;
-  }
 
   console.log(`Ese es un template string: ${getSaludo(nombreCompleto)}`);
   return (
@@ -20,5 +18,7 @@ function TemplateString() {
   );
 }
 
-export default TemplateString;
-
+export {
+  TemplateString as default,
+  getSaludo
+};

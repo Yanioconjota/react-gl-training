@@ -7,15 +7,6 @@ const getHeroeById = (id) => heroes.find((el) => el.id === id);
 const getHeroeByOwner = (owner) => heroes.filter((el) => el.owner === owner);
 
 function ImportExport() {
-  console.log(heroes);
-  console.log(owners);
-  
-  
-
-  console.log(getHeroeById(2));
-  console.log(getHeroeByOwner('DC'));
-  console.log(getHeroeByOwner('Marvel'));
-
   const [ owner1, owner2 ] = owners; 
 
   return (
