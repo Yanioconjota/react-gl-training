@@ -18,6 +18,8 @@ const PrimeraApp = ({ saludo, subtitulo }) => {
   return (
     <Col className="mt-2">
       <h1 className="text-info">Impresión de variables en HTML</h1>
+      <code>{`<PrimeraApp saludo="Hola, Soy Goku!"/>`}</code>
+      <p className="Code">{saludo}</p>
       <code>const stringMsg = 'this is a string!';</code>
       <p className="Code">{stringMsg}</p>
       <code>const boolMsg = true</code>
@@ -52,7 +54,7 @@ const PrimeraApp = ({ saludo, subtitulo }) => {
       <code className="d-block">{`<PrimeraApp saludo="Hola, Soy Goku!"/>`}</code>
       <code className="d-block Code">{`PrimeraApp.defaultProps = { subtitulo: 'Soy un subtítulo' }`}</code>
       <p className="Code">Asigna valores por defecto a las props</p>
-      <p className="Code">{subtitulo}</p>
+      <p className="Code sub-title">{subtitulo}</p>
       <hr className="my-5" />
       <p>Tarea:</p>
       <ol>
@@ -105,6 +107,44 @@ const PrimeraApp = ({ saludo, subtitulo }) => {
         <li>Revisar elementos renderizados en el componente</li>
         <li>Simular eventos</li>
       </ul>
+      <hr />
+      <h4 className="text-info">
+        Iniciando pruebas con Enzyme <em>React 17</em>
+      </h4>
+      <ol>
+        <li>Crear el archivo setupTests.js dentro de src</li>
+        <li>
+          instalar enzyme: <code class="d-block">npm i --save-dev enzyme</code>
+        </li>
+        <li>
+          Instalar el adaptador:
+          <code class="d-block">
+            npm install --save-dev @wojtekmaj/enzyme-adapter-react-17
+          </code>
+        </li>
+        <li>
+          Instalar los snapshots:
+          <code class="d-block">npm install --save-dev enzyme-to-json</code>
+        </li>
+
+        <li>
+          Configurar el setupTests.js:
+          <code className="d-block">
+            <ul className="list-unstyled">
+              <li>import Enzyme from 'enzyme';</li>
+              <li>import Adapter from '@wojtekmaj/enzyme-adapter-react-17';</li>
+              <li>{`import { createSerializer } from 'enzyme-to-json';`}</li>
+              <li>
+                <br />
+              </li>
+              <li>{`Enzyme.configure({ adapter: new Adapter() });`}</li>
+              <li>{`expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));`}</li>
+            </ul>
+          </code>
+        </li>
+
+        <li>Bajar y subir la terminal</li>
+      </ol>
     </Col>
   );
 };

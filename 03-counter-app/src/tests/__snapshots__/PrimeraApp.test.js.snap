@@ -1,0 +1,292 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <PrimeraApp /> debe mostrar <PrimeraApp /> Correctamente  1`] = `
+<Col
+  className="mt-2"
+>
+  <h1
+    className="text-info"
+  >
+    Impresión de variables en HTML
+  </h1>
+  <code>
+    &lt;PrimeraApp saludo="Hola, Soy Goku!"/&gt;
+  </code>
+  <p
+    className="Code"
+  >
+    Hola, Soy Goku!
+  </p>
+  <code>
+    const stringMsg = 'this is a string!';
+  </code>
+  <p
+    className="Code"
+  >
+    Esto es un string!
+  </p>
+  <code>
+    const boolMsg = true
+  </code>
+  <p
+    className="Code"
+  >
+    Los booleans y los undefined no pueden ser impresos en el HTML
+  </p>
+  <code>
+    const arrMsg = ["🍲", "🍔", "🍟", "🍕", "🌭", "🥪"]
+  </code>
+  <p
+    className="Code"
+  >
+    🍲
+    🍔
+    🍟
+    🍕
+    🌭
+    🥪
+  </p>
+  <code>
+    const persona = 
+    { nombre: 'James', apellido: 'Howlett',  edad: '?' }
+  </code>
+  <p
+    className="Code"
+  >
+    Error: Objects are not valid as a React child (found: object with keys {nombre, apellido, edad}). If you meant to render a collection of children, use an array instead.
+  </p>
+  <p
+    className="Code"
+  >
+    Se pueden usar string literals o JSON.stringify(persona, null, 3 para mostrar objeros:
+  </p>
+  <code
+    className="Code"
+  >
+    {
+   "nombre": "James",
+   "apellido": "Howlett",
+   "edad": "?"
+}
+  </code>
+  <hr
+    className="my-5"
+  />
+  <h1
+    className="text-info"
+  >
+    Uso de props
+  </h1>
+  <code>
+    const PrimeraApp =
+     
+    ({ saludo = 'Hola insecto!'}) =&gt; {...
+            ...export default PrimeraApp;
+  </code>
+  <p
+    className="Code"
+  >
+    ({ saludo = 'Hola insecto!'}) =&gt; {...
+     Es la desestructuración de las props o propiedades que recibe el componente, en este caso se le asigna un valor por defecto
+  </p>
+  <p
+    className="Code"
+  >
+    Se puede agregar una validación utilizando prop-types, obligando a asignar un tipo:
+  </p>
+  <code
+    className="d-block Code"
+  >
+    PrimeraApp.propTypes = 
+    { saludo: PropTypes.string.isRequired }
+  </code>
+  <code
+    className="d-block"
+  >
+    &lt;PrimeraApp saludo="Hola, Soy Goku!"/&gt;
+  </code>
+  <code
+    className="d-block Code"
+  >
+    PrimeraApp.defaultProps = { subtitulo: 'Soy un subtítulo' }
+  </code>
+  <p
+    className="Code"
+  >
+    Asigna valores por defecto a las props
+  </p>
+  <p
+    className="Code sub-title"
+  >
+    Soy un subtítulo
+  </p>
+  <hr
+    className="my-5"
+  />
+  <p>
+    Tarea:
+  </p>
+  <ol>
+    <li>
+      Crear un nuevo componente dentro de la carpeta SRC llamado CounterApp ✔️
+    </li>
+    <li>
+      El CounterApp debe de ser un Functional Component ✔️
+    </li>
+    <li>
+      El contenido del CounterApp debe de ser:
+      &lt;h1&gt;CounterApp&lt;/h1&gt;
+              &lt;h2&gt; {value} &lt;/h2&gt;
+       
+      ✔️
+    </li>
+    <li>
+      Donde "value" es una propiedad enviada desde el padre hacia el componente CounterApp (Debe ser númerica validada con PropTypes) ✔️
+    </li>
+    <li>
+      Reemplazar o agregar en el index.js el componente de
+       
+      &lt;PrimeraApp /&gt;
+      por el componente 
+      &lt;CounterApp /&gt;
+       (no se olviden del value que debe de ser un número) ✔️
+    </li>
+    <li>
+      Asegúrense de no tener errores ni warnings (Cualquier warning no usado, comentar el código) ✔️
+    </li>
+  </ol>
+  <hr
+    className="my-5"
+  />
+  <CounterApp
+    msg="value desde el componente padre: "
+    showButtons={false}
+    title="Counter App tarea"
+    value={666}
+  />
+  <CounterApp
+    img="Roque.gif"
+    msg=""
+    showButtons={true}
+    title="Counter App"
+    value={0}
+  />
+  <hr />
+  <h4
+    className="text-info"
+  >
+    Introducción a las pruebas AAA:
+  </h4>
+  <ul>
+    <li
+      className="Code"
+    >
+      Arrange (Arreglar)
+    </li>
+    <li
+      className="Code"
+    >
+      Act (Actuar)
+    </li>
+    <li
+      className="Code"
+    >
+      Assert (Afirmar)
+    </li>
+    <li>
+      Primeras pruebas
+    </li>
+    <li>
+      Jest
+    </li>
+    <li>
+      Expect
+    </li>
+    <li>
+      toBe
+    </li>
+    <li>
+      Enzyme
+    </li>
+    <li>
+      Comandos útiles en la terminal para pruebas
+    </li>
+    <li>
+      Revisar elementos renderizados en el componente
+    </li>
+    <li>
+      Simular eventos
+    </li>
+  </ul>
+  <hr />
+  <h4
+    className="text-info"
+  >
+    Iniciando pruebas con Enzyme 
+    <em>
+      React 17
+    </em>
+  </h4>
+  <ol>
+    <li>
+      Crear el archivo setupTests.js dentro de src
+    </li>
+    <li>
+      instalar enzyme: 
+      <code
+        class="d-block"
+      >
+        npm i --save-dev enzyme
+      </code>
+    </li>
+    <li>
+      Instalar el adaptador:
+      <code
+        class="d-block"
+      >
+        npm install --save-dev @wojtekmaj/enzyme-adapter-react-17
+      </code>
+    </li>
+    <li>
+      Instalar los snapshots:
+      <code
+        class="d-block"
+      >
+        npm install --save-dev enzyme-to-json
+      </code>
+    </li>
+    <li>
+      Configurar el setupTests.js:
+      <code
+        className="d-block"
+      >
+        <ul
+          className="list-unstyled"
+        >
+          <li>
+            import Enzyme from 'enzyme';
+          </li>
+          <li>
+            import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+          </li>
+          <li>
+            import { createSerializer } from 'enzyme-to-json';
+          </li>
+          <li>
+            <br />
+          </li>
+          <li>
+            Enzyme.configure({ adapter: new Adapter() });
+          </li>
+          <li>
+            expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
+          </li>
+        </ul>
+      </code>
+    </li>
+    <li>
+      Bajar y subir la terminal
+    </li>
+  </ol>
+</Col>
+`;
