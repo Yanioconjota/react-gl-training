@@ -5,7 +5,7 @@ import { Row, Col, Button } from "react-bootstrap";
 const CounterApp = ({ value, title, msg, showButtons, img }) => {
 
   const [counter, setCounter] = useState(value);
-  console.log(counter)
+  console.log(counter);
 
   const handleAdd = () => {
     //setCounter( counter + 1 );
