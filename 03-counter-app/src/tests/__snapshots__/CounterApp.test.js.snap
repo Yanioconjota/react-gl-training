@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <CounterApp /> debe mostrar <CounterApp /> correctamente  1`] = `
+<Fragment>
+  <Row>
+    <Col
+      md={6}
+      xs={12}
+    >
+      <h1
+        className="text-info"
+      >
+        Counter App
+      </h1>
+      <p>
+        <span
+          className="Code"
+        >
+          0
+        </span>
+      </p>
+      <div
+        className="btn-group"
+      >
+        <Button
+          active={false}
+          disabled={false}
+          onClick={[Function]}
+          variant="primary"
+        >
+          +1
+        </Button>
+        <Button
+          active={false}
+          disabled={false}
+          onClick={[Function]}
+          variant="info"
+        >
+          Reset
+        </Button>
+        <Button
+          active={false}
+          disabled={false}
+          onClick={[Function]}
+          variant="secondary"
+        >
+          -1
+        </Button>
+      </div>
+    </Col>
+  </Row>
+</Fragment>
+`;
