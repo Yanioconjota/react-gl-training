@@ -36,4 +36,10 @@ describe('Pruebas en <CounterApp />', () => {
     const counterText = wrapper.find("p > span.Code").text();
     expect(counterText).toBe("10");
   });
+  test("debe ocultar los botones", () => {
+    const wrapper = mount(<CounterApp showButtons={false} />);
+    const btnGroup = wrapper.find(".btn-group").text();
+    expect(btnGroup).toBe("");
+    wrapper.unmount();
+  });
 });
