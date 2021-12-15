@@ -145,6 +145,24 @@ const PrimeraApp = ({ saludo, subtitulo }) => {
 
         <li>Bajar y subir la terminal</li>
       </ol>
+      <h4 className="text-info">
+        Para activar el intellisense de enzyme y jest
+      </h4>
+      <ol>
+        <li>
+          Instalar:
+          <code className="d-block">npm i @types/jest</code>
+          <code className="d-block">npm i -g @types/jest</code>
+        </li>
+        <li>
+          Opcinalmente pueden agregar un archivo jsconfig.json a la raíz del
+          proyecto si el paso anterior no funciona
+          <code className="d-block">
+            {`{"typeAcquisition": { "include": ["jest"]}}
+            `}
+          </code>
+        </li>
+      </ol>
     </Col>
   );
 };
