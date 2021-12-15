@@ -91,6 +91,12 @@ const PrimeraApp = ({ saludo, subtitulo }) => {
         msg="value desde el componente padre: "
         showButtons={false}
       />
+      <CounterApp
+        value={42}
+        title="Counter App duplicado"
+        msg="La respuesta es: "
+        showButtons={false}
+      />
       <CounterApp value={0} img={gif} />
       <hr />
       <h4 className="text-info">Introducción a las pruebas AAA:</h4>
@@ -114,17 +120,17 @@ const PrimeraApp = ({ saludo, subtitulo }) => {
       <ol>
         <li>Crear el archivo setupTests.js dentro de src</li>
         <li>
-          instalar enzyme: <code class="d-block">npm i --save-dev enzyme</code>
+          instalar enzyme: <code className="d-block">npm i --save-dev enzyme</code>
         </li>
         <li>
           Instalar el adaptador:
-          <code class="d-block">
+          <code className="d-block">
             npm install --save-dev @wojtekmaj/enzyme-adapter-react-17
           </code>
         </li>
         <li>
           Instalar los snapshots:
-          <code class="d-block">npm install --save-dev enzyme-to-json</code>
+          <code className="d-block">npm install --save-dev enzyme-to-json</code>
         </li>
 
         <li>

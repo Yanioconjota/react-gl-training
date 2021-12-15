@@ -25,18 +25,35 @@ const CounterApp = ({ value, title, msg, showButtons, img }) => {
       <Row>
         <Col md={6} xs={12}>
           <h1 className="text-info">{title}</h1>
-          <p>{msg}<span className="Code">{counter}</span></p>
+          <p>
+            {msg}
+            {!showButtons && <span className="Code">{value}</span>}
+            {showButtons && <span className="Code">{counter}</span>}
+          </p>
           <div className="btn-group">
-            {showButtons && <Button onClick={handleAdd} variant="primary">+1</Button>}
-            {showButtons && <Button onClick={handleReset} variant="info">Reset</Button>}
-            {showButtons && <Button onClick={handleSubstract} variant="secondary">-1</Button>}
+            {showButtons && (
+              <Button onClick={handleAdd} variant="primary">
+                +1
+              </Button>
+            )}
+            {showButtons && (
+              <Button onClick={handleReset} variant="info">
+                Reset
+              </Button>
+            )}
+            {showButtons && (
+              <Button onClick={handleSubstract} variant="secondary">
+                -1
+              </Button>
+            )}
           </div>
         </Col>
-        { (img && counter >= 5) &&
+        {img && counter >= 5 && (
           <Col md={6} xs={12}>
-          <p className="Code">Vamoh todavía!</p>
-          <img src={img} className="w-50" alt="Roque"/>
-        </Col>}
+            <p className="Code">Vamoh todavía!</p>
+            <img src={img} className="w-50" alt="Roque" />
+          </Col>
+        )}
       </Row>
     </>
   );

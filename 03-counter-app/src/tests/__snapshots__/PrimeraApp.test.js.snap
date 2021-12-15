@@ -165,6 +165,12 @@ exports[`Pruebas en <PrimeraApp /> debe mostrar <PrimeraApp /> Correctamente  1`
     value={666}
   />
   <CounterApp
+    msg="La respuesta es: "
+    showButtons={false}
+    title="Counter App duplicado"
+    value={42}
+  />
+  <CounterApp
     img="Roque.gif"
     msg=""
     showButtons={true}
@@ -234,7 +240,7 @@ exports[`Pruebas en <PrimeraApp /> debe mostrar <PrimeraApp /> Correctamente  1`
     <li>
       instalar enzyme: 
       <code
-        class="d-block"
+        className="d-block"
       >
         npm i --save-dev enzyme
       </code>
@@ -242,7 +248,7 @@ exports[`Pruebas en <PrimeraApp /> debe mostrar <PrimeraApp /> Correctamente  1`
     <li>
       Instalar el adaptador:
       <code
-        class="d-block"
+        className="d-block"
       >
         npm install --save-dev @wojtekmaj/enzyme-adapter-react-17
       </code>
@@ -250,7 +256,7 @@ exports[`Pruebas en <PrimeraApp /> debe mostrar <PrimeraApp /> Correctamente  1`
     <li>
       Instalar los snapshots:
       <code
-        class="d-block"
+        className="d-block"
       >
         npm install --save-dev enzyme-to-json
       </code>

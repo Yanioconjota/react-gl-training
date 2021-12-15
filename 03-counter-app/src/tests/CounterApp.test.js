@@ -23,14 +23,13 @@ describe('Pruebas en <CounterApp />', () => {
     expect(counterText).toBe('11');
   });
 
-  test("debe de incrementar con el botón de -1", () => {
+  test("debe de reducir con el botón de -1", () => {
     wrapper.find(".btn-secondary").simulate("click");
     const counterText = wrapper.find("p > span.Code").text();
     expect(counterText).toBe("9");
   });
 
   test("debe de reiniciar el valor con el botón de reset", () => {
-    const wrapper = mount(<CounterApp showButtons={true} value={10} />);
     wrapper.find(".btn-secondary").simulate("click");
     wrapper.find(".btn-info").simulate("click");
     const counterText = wrapper.find("p > span.Code").text();
@@ -40,6 +39,5 @@ describe('Pruebas en <CounterApp />', () => {
     const wrapper = mount(<CounterApp showButtons={false} />);
     const btnGroup = wrapper.find(".btn-group").text();
     expect(btnGroup).toBe("");
-    wrapper.unmount();
   });
 });
