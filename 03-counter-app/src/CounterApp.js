@@ -17,16 +17,15 @@ const CounterApp = ({ value, title, msg, showButtons, img }) => {
   };
 
   const handleReset = () => {
-    setCounter(value = 0);
+    setCounter(value);
   };
 
   return (
     <>
-      
       <Row>
         <Col md={6} xs={12}>
           <h1 className="text-info">{title}</h1>
-          <p>{msg}<span className="Code">{value | counter}</span></p>
+          <p>{msg}<span className="Code">{counter}</span></p>
           <div className="btn-group">
             {showButtons && <Button onClick={handleAdd} variant="primary">+1</Button>}
             {showButtons && <Button onClick={handleReset} variant="info">Reset</Button>}
@@ -54,8 +53,7 @@ CounterApp.propTypes = {
 CounterApp.defaultProps = {
   title: "Counter App",
   msg: "",
-  showButtons: true,
-  value: 0
+  showButtons: true
 };
 
 export default CounterApp;
