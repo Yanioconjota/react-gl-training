@@ -1,53 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pruebas en <CounterApp /> debe mostrar <CounterApp /> correctamente  1`] = `
-<Fragment>
-  <Row>
-    <Col
-      md={6}
-      xs={12}
+<div
+  className="row"
+>
+  <div
+    className="col-md-6 col-12"
+  >
+    <h1
+      className="text-info"
     >
-      <h1
-        className="text-info"
+      Counter App
+    </h1>
+    <p>
+      <span
+        className="Code"
       >
-        Counter App
-      </h1>
-      <p>
-        <span
-          className="Code"
-        >
-          0
-        </span>
-      </p>
-      <div
-        className="btn-group"
+        10
+      </span>
+    </p>
+    <div
+      className="btn-group"
+    >
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
       >
-        <Button
-          active={false}
-          disabled={false}
-          onClick={[Function]}
-          variant="primary"
-        >
-          +1
-        </Button>
-        <Button
-          active={false}
-          disabled={false}
-          onClick={[Function]}
-          variant="info"
-        >
-          Reset
-        </Button>
-        <Button
-          active={false}
-          disabled={false}
-          onClick={[Function]}
-          variant="secondary"
-        >
-          -1
-        </Button>
-      </div>
-    </Col>
-  </Row>
-</Fragment>
+        +1
+      </button>
+      <button
+        className="btn btn-info"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Reset
+      </button>
+      <button
+        className="btn btn-secondary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        -1
+      </button>
+    </div>
+  </div>
+</div>
 `;
