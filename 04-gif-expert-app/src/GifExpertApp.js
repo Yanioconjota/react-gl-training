@@ -3,32 +3,27 @@ import "./GifExpertApp.scss";
 import { useState } from 'react';
 
 import AddCategory from './components/AddCategory';
+import GifGrid from './GifGrid';
 
 const GifExpertApp = () => {
 
   const [categories, setCategories] = useState([
     "One Punch Man",
-    "Samurai X",
-    "Dragon Ball Z",
   ]);
 
-  /* const handleAdd = () => { 
-    setCategories(newCategories => [...newCategories, `categoria-${Math.random()}`])
-  }; */
-
   return (
-    <Col xs={12} md={6}>
+    <Col xs={12}>
       <h2 className="text-info">GifExpertApp</h2>
       <hr />
-      <AddCategory setCategories={setCategories} />
-      <ol>
-        {categories.map((category) => {
-          return <li key={category}>{category}</li>;
-        })}
-      </ol>
+      <AddCategory setCategories={setCategories} categories={categories} />
+      <>
+        {categories.map((category) => (
+          <GifGrid key={category}
+                   category={category}/>
+        ))}
+      </>
     </Col>
   );
-
 }
 
 export default GifExpertApp;
