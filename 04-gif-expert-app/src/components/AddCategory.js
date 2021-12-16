@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import PropTypes from "prop-types";
 
-export const AddCategory = ({setCategories, categories}) => {
+export const AddCategory = ({setCategories}) => {
 
   const [inputValue, setInputValue] = useState('');
   
@@ -16,8 +16,7 @@ export const AddCategory = ({setCategories, categories}) => {
     
     if (eventValue.trim() !== "") {
       setCategories((categories) => [
-        ...categories,
-        inputValue,
+       inputValue,
       ]);
       setInputValue('');
     }
@@ -43,8 +42,7 @@ export const AddCategory = ({setCategories, categories}) => {
 }
 
 AddCategory.propTypes = {
-  setCategories: PropTypes.func.isRequired,
-  categories: PropTypes.array,
+  setCategories: PropTypes.func.isRequired
 };
 
 export default AddCategory;

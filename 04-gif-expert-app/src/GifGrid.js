@@ -1,7 +1,14 @@
-import React from 'react'
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from "react";
+import { Col, Row } from "react-bootstrap";
+import GifItem from "./GifItem";
 
 const GifGrid = ({ category }) => {
+
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    getGifs(category);
+  }, [category]);
 
   const getGifs = async(category) => {
     const apiKey = "api_key=EJRMW0vkab9582ndI3I5UZQ4ObyWb3OK";
@@ -17,17 +24,21 @@ const GifGrid = ({ category }) => {
     }));
 
     console.log(gifs);
+    setImages(gifs);
   };
 
-  getGifs(category);
-
   return (
-    <h3>{category}</h3>
+    <>
+      <h3>{category}</h3>
+      <Row>
+        {images.map((img) => (
+          <Col xs={12} md={3} key={img.id}>
+            <GifItem {...img}/>
+          </Col>
+        ))}
+      </Row>
+    </>
   );
 }
-
-GifGrid.propTypes = {
-  category: PropTypes.string.isRequired,
-};
 
 export default GifGrid;
