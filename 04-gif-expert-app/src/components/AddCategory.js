@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
+import PropTypes from "prop-types";
 
-export const AddCategory = ({setCategories}) => {
+export const AddCategory = ({setCategories, categories}) => {
 
-  const [inputValue, setInputValue] = useState('Default value');
+  const [inputValue, setInputValue] = useState('');
   
   const handleInputChange = (e) => {
-    console.log(e.target.value);
     setInputValue(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (e.target.elements[0].value !== '') {
-      console.log(e.target.elements[0].value);
+    const eventValue = inputValue;
+    
+    if (eventValue.trim() !== "") {
       setCategories((categories) => [
         ...categories,
-        e.target.elements[0].value,
+        inputValue,
       ]);
-      e.target.elements[0].value = "";
+      setInputValue('');
     }
   }
 
@@ -31,6 +32,7 @@ export const AddCategory = ({setCategories}) => {
           placeholder="Type something"
           onChange={handleInputChange}
           className="form-control"
+          value={inputValue}
         />
         <Button type="submit" variant="secondary">
           Agregar
@@ -39,5 +41,10 @@ export const AddCategory = ({setCategories}) => {
     </form>
   );
 }
+
+AddCategory.propTypes = {
+  setCategories: PropTypes.func.isRequired,
+  categories: PropTypes.array,
+};
 
 export default AddCategory;
