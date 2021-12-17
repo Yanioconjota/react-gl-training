@@ -15,7 +15,7 @@ export const AddCategory = ({setCategories}) => {
     const eventValue = inputValue;
     
     if (eventValue.trim() !== "") {
-      setCategories((categories) => [
+      setCategories(() => [
        inputValue,
       ]);
       setInputValue('');
@@ -24,7 +24,6 @@ export const AddCategory = ({setCategories}) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p>{inputValue}</p>
       <div className="input-group mb-3">
         <input
           type="text"
