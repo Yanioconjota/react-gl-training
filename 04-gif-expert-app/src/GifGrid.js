@@ -14,9 +14,9 @@ const GifGrid = ({ category }) => {
 
   useEffect(() => {
     getGifs(category);
-  }, [category, offset, limit]);
+  }, [category, offset]);
 
-  const getGifs = async (category, offset, limit) => {
+  const getGifs = async (category, offset) => {
     const apiKey = "api_key=EJRMW0vkab9582ndI3I5UZQ4ObyWb3OK";
     const query = category;
     const url = `https://api.giphy.com/v1/gifs/search?q=${query}&limit=${limit}&offset=${offset}&${apiKey}`;
