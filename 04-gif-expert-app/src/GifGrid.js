@@ -14,15 +14,15 @@ const GifGrid = ({ category }) => {
 
   useEffect(() => {
     getGifs(category);
-  }, [category, offset]);
+  }, [category, offset, limit]);
 
-  const getGifs = async(category) => {
+  const getGifs = async (category, offset, limit) => {
     const apiKey = "api_key=EJRMW0vkab9582ndI3I5UZQ4ObyWb3OK";
     const query = category;
-    const url = `https://api.giphy.com/v1/gifs/search?q=${query}&limit=${limit}&offset=${offset}&${apiKey}`
+    const url = `https://api.giphy.com/v1/gifs/search?q=${query}&limit=${limit}&offset=${offset}&${apiKey}`;
     const resp = await fetch(url);
-    const {data} = await resp.json();
-    
+    const { data } = await resp.json();
+
     const gifs = data.map((img) => ({
       id: img.id,
       title: img.title,
