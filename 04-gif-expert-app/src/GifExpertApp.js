@@ -8,7 +8,7 @@ import GifGrid from './GifGrid';
 const GifExpertApp = () => {
 
   const [categories, setCategories] = useState([
-    "One Punch Man",
+    "Rambo",
   ]);
 
   return (

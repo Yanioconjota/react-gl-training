@@ -21,9 +21,9 @@ const GifGrid = ({ category }) => {
 
   return (
     <>
-      { loading ? <p>Loading...</p> :
+      { loading ? <p className="animate__animated animate__flash">Loading...</p> :
         <>
-          <h3>{category}</h3>
+          <h3 className="animate__animated animate__fadeIn">{category}</h3>
           <Row>
             {images.map((img) => (
               <Col xs={12} md={3} key={img.id}>
