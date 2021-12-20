@@ -5,8 +5,10 @@ import { useFetchGifs } from "./hooks/useFetchGifs";
 
 const GifGrid = ({ category }) => {
 
+  const multiplier = 12;
+
   const [state, setState] = useState({
-    limit: 6,
+    limit: multiplier,
     offset: 0
   });
 
@@ -14,7 +16,7 @@ const GifGrid = ({ category }) => {
 
   const loadMore = () => {
     setState({
-      limit: state.limit + 6,
+      limit: state.limit + multiplier,
       offset: state.offset + 1
     })
   };
