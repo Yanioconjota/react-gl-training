@@ -3,12 +3,12 @@ import "./GifExpertApp.scss";
 import { useState } from 'react';
 
 import AddCategory from './components/AddCategory';
-import GifGrid from './GifGrid';
+import GifGrid from './components/GifGrid';
 
 const GifExpertApp = () => {
 
   const [categories, setCategories] = useState([
-    "Rambo",
+    "Far Cry 6",
   ]);
 
   return (
