@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import PropTypes from "prop-types";
 
-export const AddCategory = ({setCategories}) => {
+export const AddCategory = ({setCategories, categories}) => {
 
   const [inputValue, setInputValue] = useState('');
   

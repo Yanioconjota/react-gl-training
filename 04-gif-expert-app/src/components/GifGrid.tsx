@@ -42,7 +42,7 @@ const GifGrid = ({ category }) => {
 }
 
 GifGrid.propTypes = {
-  category: PropTypes.string
+  category: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default GifGrid;
