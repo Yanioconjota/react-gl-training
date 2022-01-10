@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Col, Row, Button } from "react-bootstrap";
 import GifItem from "./GifItem";
 import { useFetchGifs } from "../hooks/useFetchGifs";
+import PropTypes from 'prop-types';
 
 const GifGrid = ({ category }) => {
 
@@ -38,6 +39,10 @@ const GifGrid = ({ category }) => {
       }
     </>
   );
+}
+
+GifGrid.propTypes = {
+  category: PropTypes.string
 }
 
 export default GifGrid;

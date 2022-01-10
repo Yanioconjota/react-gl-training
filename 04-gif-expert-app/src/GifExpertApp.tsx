@@ -1,5 +1,6 @@
 import { Col } from 'react-bootstrap';
 import "./GifExpertApp.scss";
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 import AddCategory from './components/AddCategory';
@@ -21,6 +22,11 @@ const GifExpertApp = () => {
       </>
     </Col>
   );
+}
+
+GifExpertApp.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.string),
+  setCategories: PropTypes.func
 }
 
 export default GifExpertApp;
