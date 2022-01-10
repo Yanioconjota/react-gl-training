@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en AddCategory debe mostrarse correctamente 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="input-group mb-3"
+  >
+    <input
+      className="form-control"
+      onChange={[Function]}
+      placeholder="Type something"
+      type="text"
+      value=""
+    />
+    <Button
+      active={false}
+      disabled={false}
+      type="submit"
+      variant="secondary"
+    >
+      Agregar
+    </Button>
+  </div>
+</form>
+`;

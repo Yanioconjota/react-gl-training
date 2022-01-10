@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { mount, shallow } from "enzyme";
-import GifItem from "../components/GifItem";
+import GifItem from '../../components/GifItem';
 
 describe('Pruebas en GifItem', () => {
 
