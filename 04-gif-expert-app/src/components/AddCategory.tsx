@@ -13,9 +13,11 @@ export const AddCategory = ({setCategories, categories}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('handleSubmit');
     const eventValue = inputValue;
     
     if (eventValue.trim() !== "") {
+      //setCategories(898); para probar que se haya llamado con una función
       setCategories(() => [
        inputValue,
       ]);
