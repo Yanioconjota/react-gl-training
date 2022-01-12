@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas con GifExpertApp el componente debe de mostrarse correctament 1`] = `
+<Col
+  xs={12}
+>
+  <h2
+    className="text-info"
+  >
+    GifExpertApp
+  </h2>
+  <hr />
+  <AddCategory
+    categories="Far Cry 6"
+    setCategories={[Function]}
+  />
+  <GifGrid
+    category="Far Cry 6"
+  />
+</Col>
+`;
