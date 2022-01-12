@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { mount, shallow } from "enzyme";
+import { shallow } from "enzyme";
 import AddCategory from "../../components/AddCategory";
 
 describe("Pruebas en AddCategory", () => {

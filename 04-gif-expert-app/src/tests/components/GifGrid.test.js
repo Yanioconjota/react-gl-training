@@ -1,11 +1,11 @@
 import "@testing-library/jest-dom";
-import { mount, shallow } from "enzyme";
+import { shallow } from "enzyme";
 import GifGrid from "../../components/GifGrid";
 import { useFetchGifs } from "../../hooks/useFetchGifs";
 //Mock a la llamada al método useFetchGifs
 jest.mock("../../hooks/useFetchGifs");
 describe('pruebas con gifGrid', () => {
-  const category = ["Far Cry 6"];
+  const category = "Far Cry 6";
   test('El componente debe de mostrarse correctamente', () => {
     useFetchGifs.mockReturnValue({
       data: [],
