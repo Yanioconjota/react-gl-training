@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import { Col, Row, Button } from "react-bootstrap";
 import GifItem from "./GifItem";
 import { useFetchGifs } from "../hooks/useFetchGifs";
 import PropTypes from 'prop-types';
+import { IGifGrid } from "../modules/exports";
 
-const GifGrid = ({ category }) => {
+const GifGrid:FunctionComponent<IGifGrid> = ({ category }) => {
 
   const multiplier = 12;
 
@@ -15,7 +16,7 @@ const GifGrid = ({ category }) => {
 
   const { data: images, loading } = useFetchGifs(category, state.limit, state.offset);
 
-  const loadMore = () => {
+  const loadMore = ():void => {
     setState({
       limit: state.limit + multiplier,
       offset: state.offset + 1

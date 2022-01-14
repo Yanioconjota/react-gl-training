@@ -14,7 +14,7 @@ const GifExpertApp = ({defaultCategories = 'Far Cry 6'}) => {
     <Col xs={12}>
       <h2 className="text-info">GifExpertApp</h2>
       <hr />
-      <AddCategory setCategories={setCategories} categories={categories} />
+      <AddCategory setCategories={setCategories} />
       <>
         <GifGrid category={categories} />
       </>

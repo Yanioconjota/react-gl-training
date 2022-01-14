@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import Button from 'react-bootstrap/Button';
 import PropTypes from "prop-types";
+import { IAddCategory } from "../modules/exports";
 
-export const AddCategory = ({setCategories, categories}) => {
+export const AddCategory: FunctionComponent<IAddCategory> = ({setCategories}) => {
 
   const [inputValue, setInputValue] = useState('');
   

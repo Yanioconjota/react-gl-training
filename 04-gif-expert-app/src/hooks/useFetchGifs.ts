@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { getGifs } from "../helpers/getGifs";
+import { IGifState } from "../modules/exports";
 
 
-export const useFetchGifs = (category, limit, offset) => {
+export const useFetchGifs = (category: string, limit: number, offset: number) => {
 
-  const [state, setState] = useState({
+  const [state, setState] = useState<IGifState>({
     data: [],
     loading: true,
     limit: limit,

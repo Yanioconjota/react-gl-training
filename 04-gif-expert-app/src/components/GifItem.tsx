@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
+import { FunctionComponent } from 'react';
+import { IGifItem } from '../modules/exports';
 
-const GifItem = ({ title, url }) => {
+const GifItem: FunctionComponent<IGifItem> = ({ title, url }) => {
   return (
     <div className="animate__animated animate__fadeIn">
       <img src={url} alt={title} className="w-100" />
