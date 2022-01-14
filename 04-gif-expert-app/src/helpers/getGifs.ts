@@ -1,4 +1,6 @@
-export const getGifs = async (category, limit, offset) => {
+import { Gif, GiphyResponse } from "../modules/exports";
+
+export const getGifs = async (category: string, limit: number, offset: number) => {
   const apiKey = "api_key=EJRMW0vkab9582ndI3I5UZQ4ObyWb3OK";
   const query = category;
   const url = `https://api.giphy.com/v1/gifs/search?q=${encodeURI(
@@ -7,7 +9,7 @@ export const getGifs = async (category, limit, offset) => {
   const resp = await fetch(url);
   const { data } = await resp.json();
 
-  const gifs = data.map((img) => ({
+  const gifs: Gif[] = data.map((img: GiphyResponse) => ({
     id: img.id,
     title: img.title,
     url: img.images?.downsized_large.url,
