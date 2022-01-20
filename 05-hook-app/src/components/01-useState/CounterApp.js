@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
-import { Row, Col } from "react-bootstrap";
+import { Button, Row, Col } from "react-bootstrap";
 
 const CounterApp = () => {
 
