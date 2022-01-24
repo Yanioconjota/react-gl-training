@@ -1,4 +1,5 @@
 import React, { useRef, useLayoutEffect, useState } from "react";
+import { Button } from 'react-bootstrap';
 import { useCounter } from "../../hooks/useCounter";
 import { useFetch } from "../../hooks/useFetch";
 
@@ -9,7 +10,7 @@ const Layout = () => {
     `https://www.breakingbadapi.com/api/quotes/${counter}`
   );
 
-  const { quote } = !!data && data[0];
+  const { author, quote } = !!data && data[0];
   
   const pTag = useRef();
 
@@ -22,15 +23,16 @@ const Layout = () => {
 
   return (
     <>
-      <h1>Breaking bad Quotes</h1>
+      <h1>useLayoutEffect | <em>Breaking bad Quotes</em></h1>
       <hr />
-      <blockquote className="D-flex">
+      <blockquote className="blockquote Text-right">
         <p ref={pTag}>{quote}</p>
+        <footer className="blockquote-footer">{author}</footer>
       </blockquote>
       <pre className="Code">{JSON.stringify(boxSize, null, 3)}</pre>
-      <button onClick={() => increment(1)} className="btn btn-primary">
+      <Button onClick={() => increment(1)} variant="primary" className="w-100">
         Cargar otra cita
-      </button>
+      </Button>
     </>
   );
 };
