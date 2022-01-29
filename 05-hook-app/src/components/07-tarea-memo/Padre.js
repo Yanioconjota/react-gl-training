@@ -21,9 +21,11 @@ const Padre = () => {
 
       <hr />
 
-      {numeros.map((n) => (
-        <Hijo key={n} numero={n} incrementar={incrementar} />
-      ))}
+      <div className="btn-group">
+        {numeros.map((n) => (
+          <Hijo key={n} numero={n} incrementar={incrementar} />
+        ))}
+      </div>
       {/* <Hijo /> */}
     </div>
   );
