@@ -12,7 +12,7 @@ const MainApp = () => {
 
   return (
     <Container>
-      <p>Rick and Morty API</p>
+      <h1>Rick and Morty API <small><em>with Axios</em></small></h1>
       <hr />
       <Row>
         {loading && <p>loading...</p>}
