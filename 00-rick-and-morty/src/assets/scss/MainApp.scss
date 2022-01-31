@@ -1,7 +1,124 @@
+@import './CustomBootstrap.scss';
+
+body {
+  width: 100%;
+  color: white;
+  background-color: #121113;
+}
+
+.App-logo {
+  height: 35px;
+  width: 35px;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 5s linear;
+  }
+}
+
+.Text-center {
+  text-align: center;
+}
+
+.Text-right {
+  text-align: right;
+}
+
+hr {
+  border: 1px dashed #61dafb;
+  background-color: transparent;
+}
+
+#root {
+  padding: 15px;
+}
+
+input.form-control {
+  // border: none;
+  // border-bottom: 1px solid magenta;
+  border-color: #9d267f;
+  background-color: transparent;
+  border-radius: 0;
+  color: #fff;
+
+  // padding-left: 0;
+  // padding-right: 0;
+  &:focus {
+    background-color: transparent;
+    color: #fff;
+    box-shadow: none;
+  }
+}
+
+code {
+  @extend .bg-dark;
+  padding: 5px 12px;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+.Code {
+  @extend .text-yellow;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  &:not(li) {
+    margin: 5px 0;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.D-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &.J-center {
+    justify-content: center;
+  }
+}
+
+.Title-flex {
+  @extend .D-flex;
+}
+
+.Nav {
+  @extend .D-flex;
+
+  >* {
+    color: #61dafb;
+    text-decoration: none;
+    margin: 5px;
+  }
+}
+
 .card {
-  background-color: rgb(69, 63, 75);
+  background-color: #9d267f;
+  margin-bottom: 5px;
+  border: none;
+  background-color: rgb(69, 63, 75) !important;
+
   p {
     padding: 0;
     margin: 0;
+  }
+
+  .badge {
+    margin-left: 5px;
   }
 }
