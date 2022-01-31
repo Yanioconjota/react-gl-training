@@ -13,11 +13,14 @@ import './assets/scss/index.scss';
 //import Memorize from './components/06-memos/Memorize';
 //import MemoHook from './components/06-memos/MemoHook';
 //import CallBackHook from './components/06-memos/CallBackHook';
-import Padre from './components/07-tarea-memo/Padre';
+//import Padre from './components/07-tarea-memo/Padre';
+//import './components/08-useReducer/intro-reducer';
+import TodoApp from './components/08-useReducer/TodoApp';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Padre/>
+    <TodoApp/>
   </React.StrictMode>,
   document.getElementById("root")
 );
+

@@ -1,0 +1,13 @@
+.list-group {
+  .list-group-item {
+    background-color: lighten($color: #121113, $amount: 10%);
+    color: #fff;
+    p {
+      cursor: pointer;
+    }
+  }
+}
+
+.complete {
+  text-decoration: line-through;
+}
