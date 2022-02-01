@@ -2,12 +2,21 @@
   .list-group-item {
     background-color: lighten($color: #121113, $amount: 10%);
     color: #fff;
+    padding: 0;
+    margin-bottom: 7px;
     p {
       cursor: pointer;
+      margin: 0;
+      padding: 7px 0 7px 12px;
+      width: 100%;
+      &:hover {
+        background-color: lighten($color: #121113, $amount: 20%);
+      }
     }
   }
 }
 
 .complete {
   text-decoration: line-through;
+  color: darken($color: #fff, $amount: 35%);
 }

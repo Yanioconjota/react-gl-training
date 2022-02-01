@@ -54,6 +54,13 @@ const TodoApp = () => {
     resetForm();
   };
 
+  const handleToggle = (todoId) => {
+    dispatch({
+      type: 'toggle',
+      payload: todoId
+    });
+  };
+
   return (
     <>
       <h1>
@@ -68,11 +75,16 @@ const TodoApp = () => {
                 key={todo.id}
                 className="list-group-item d-flex justify-content-between align-items-center"
               >
-                <p className="m-0">
+                <p className={`${todo.done && 'complete'}`} onClick={() => handleToggle(todo.id)}>
                   {i + 1}. {todo.desc}
                 </p>
                 <ButtonGroup>
-                  <Button onClick={()=>handleDelete(todo.id)} variant="danger">Borrar</Button>
+                  <Button
+                    onClick={() => handleDelete(todo.id)}
+                    variant="danger"
+                  >
+                    ✖️
+                  </Button>
                 </ButtonGroup>
               </li>
             ))}
@@ -87,7 +99,7 @@ const TodoApp = () => {
               type="text"
               name="description"
               autocompplete="off"
-              placeholder="Aprender..."
+              placeholder="Tengo que..."
               value={description}
               onChange={handleInputChange}
             />
