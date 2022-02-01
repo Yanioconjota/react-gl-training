@@ -122,3 +122,17 @@ code {
     margin-left: 5px;
   }
 }
+
+header {
+  width: 100%;
+  background-color: #121113;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  padding: 15px 30px;
+}
+
+.container {
+  margin-top: 115px;
+}
