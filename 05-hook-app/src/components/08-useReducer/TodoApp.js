@@ -1,9 +1,9 @@
 import React, { useEffect, useReducer } from 'react';
-import {Row, Col, Button } from 'react-bootstrap';
+import {Row, Col } from 'react-bootstrap';
 import { todoReducer } from './todoReducer';
-import { useForm } from '../../hooks/useForm';
 import '../../assets/scss/TodoApp.scss';
 import TodoList from './TodoList';
+import TodoAdd from './TodoAdd';
 
 const init = () => {
   return JSON.parse(localStorage.getItem('todos')) || [];
@@ -18,10 +18,6 @@ const TodoApp = () => {
 
   const [ todos, dispatch ] = useReducer(todoReducer, [], init);
 
-  const [{description}, handleInputChange, resetForm] = useForm({
-    description: ''
-  });
-
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
   },[todos]);
@@ -32,27 +28,13 @@ const TodoApp = () => {
       payload: todoId,
     };
     dispatch(action);
-  }
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    if (description.trim().length < 1) {
-      return;
-    }
-    const newTodo = {
-      id: new Date().getTime(),
-      desc: description,
-      done: false,
-    };
-
-    const action = {
+  const handleAddTodo = (newTodo) => {
+    dispatch({
       type: 'add',
       payload: newTodo
-    };
-
-    dispatch(action);
-    resetForm();
+    });
   };
 
   const handleToggle = (todoId) => {
@@ -77,24 +59,8 @@ const TodoApp = () => {
           />
         </Col>
         <Col md={5}>
-          <h4>Agregar todo</h4>
-          <hr />
-          <form onSubmit={handleSubmit}>
-            <input
-              className="form-control"
-              type="text"
-              name="description"
-              autocompplete="off"
-              placeholder="Tengo que..."
-              value={description}
-              onChange={handleInputChange}
-            />
-            <div className="d-grid mt-2">
-              <Button type="submit" variant="outline-primary">
-                Agregar
-              </Button>
-            </div>
-          </form>
+          <TodoAdd
+            handleAddTodo={handleAddTodo}/>
         </Col>
       </Row>
     </>
