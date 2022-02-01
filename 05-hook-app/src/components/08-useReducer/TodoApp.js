@@ -1,8 +1,9 @@
 import React, { useEffect, useReducer } from 'react';
-import {Row, Col, Button, ButtonGroup} from 'react-bootstrap';
+import {Row, Col, Button } from 'react-bootstrap';
 import { todoReducer } from './todoReducer';
 import { useForm } from '../../hooks/useForm';
 import '../../assets/scss/TodoApp.scss';
+import TodoList from './TodoList';
 
 const init = () => {
   return JSON.parse(localStorage.getItem('todos')) || [];
@@ -69,26 +70,11 @@ const TodoApp = () => {
       <hr />
       <Row>
         <Col md={7}>
-          <ol className="list-group list-group-flush">
-            {todos.map((todo, i) => (
-              <li
-                key={todo.id}
-                className="list-group-item d-flex justify-content-between align-items-center"
-              >
-                <p className={`${todo.done && 'complete'}`} onClick={() => handleToggle(todo.id)}>
-                  {i + 1}. {todo.desc}
-                </p>
-                <ButtonGroup>
-                  <Button
-                    onClick={() => handleDelete(todo.id)}
-                    variant="danger"
-                  >
-                    ✖️
-                  </Button>
-                </ButtonGroup>
-              </li>
-            ))}
-          </ol>
+          <TodoList
+            todos={todos}
+            handleDelete={handleDelete}
+            handleToggle={handleToggle}
+          />
         </Col>
         <Col md={5}>
           <h4>Agregar todo</h4>
