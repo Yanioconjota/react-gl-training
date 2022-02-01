@@ -112,6 +112,27 @@ code {
   margin-bottom: 5px;
   border: none;
   background-color: rgb(69, 63, 75) !important;
+  display: flex;
+  flex-direction: row;
+  .card-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include media-breakpoint-up(sm) {
+      width: 40%;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 30%;
+    }
+  }
+  .card-body {
+    @include media-breakpoint-up(sm) {
+      width: 60%;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 70%;
+    }
+  }
 
   p {
     padding: 0;
