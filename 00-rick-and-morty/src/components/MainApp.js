@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
 import { useGetData } from "../hooks/useGetData";
 import '../assets/scss/MainApp.scss';
@@ -22,7 +22,14 @@ const MainApp = () => {
       setPage(page - 1);
     }
   };
-  
+  const [height, setHeight] = useState(0);
+  const ref = useRef(null);
+
+  useEffect(()=>{
+    if (!loading) {;
+      setHeight(`${ref.current.clientHeight}px`);
+    }
+  },[loading]);
 
   return (
     <>
@@ -43,9 +50,12 @@ const MainApp = () => {
           {loading && <p>loading...</p>}
           {!loading &&
             characters.map((ch) => (
-              <Col xs={12} md={3} key={ch.id}>
-                <div className="card">
-                  <img alt={ch.name} src={ch.image} />
+              <Col xs={12} md={6} key={ch.id}>
+                <div className="card D-flex" ref={ref}>
+                  <div className="card-img"
+                       style={{
+                         backgroundImage:`url(${ch.image})`,
+                         height: `${height}`}}></div>
                   <div className="card-body">
                     <div>
                       <strong>Name</strong>: {ch.name}
