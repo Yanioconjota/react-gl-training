@@ -8,14 +8,9 @@ export const HomeScreen = () => {
 
   return (
     <>
-      <h1 className="d-flex justify-content-between align-items-center">
-        <span>Home screen</span>
-        {/* <small>Hola {name}!</small>   */}
-      </h1>
-      <hr/>
-      <pre className="Code">
-        {JSON.stringify(user, null, 3)}
-      </pre>
+      <h1>Home screen</h1>
+      <hr />
+      <pre className="Code">{JSON.stringify(user, null, 3)}</pre>
     </>
   );
 };

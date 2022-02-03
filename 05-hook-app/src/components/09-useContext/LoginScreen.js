@@ -2,8 +2,14 @@ import React, { useContext } from "react";
 import { UserContext } from "./UserContext";
 
 export const LoginScreen = () => {
-  const { user, setUser } = useContext(UserContext);
-  console.log({ user });
+  const { setUser } = useContext(UserContext);
+
+  const loggedUser = {
+    id: 666,
+    name: 'Homero',
+    lastname: 'Thompson',
+    email: 'homerothompson@email.com'
+  };
 
   return (
     <>
@@ -11,7 +17,7 @@ export const LoginScreen = () => {
       <hr />
       <button
         className="btn btn-primary"
-        onClick={()=> setUser()}>Login</button>
+        onClick={()=> setUser(loggedUser)}>Login</button>
     </>
   );
 };
