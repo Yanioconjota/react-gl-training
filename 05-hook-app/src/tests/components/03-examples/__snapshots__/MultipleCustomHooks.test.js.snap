@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`debe mostrar el componente correctamente debe traer la info por defecto 1`] = `
+<Fragment>
+  <h1>
+    Breaking bad Quotes
+  </h1>
+  <hr />
+  <div
+    className="alert alert-primary text-center"
+  >
+    loading...
+  </div>
+</Fragment>
+`;
+
+exports[`debe mostrar el componente correctamente should first 1`] = `
+<Fragment>
+  <h1>
+    Breaking bad Quotes
+  </h1>
+  <hr />
+  <div
+    className="alert alert-primary text-center"
+  >
+    loading...
+  </div>
+</Fragment>
+`;
