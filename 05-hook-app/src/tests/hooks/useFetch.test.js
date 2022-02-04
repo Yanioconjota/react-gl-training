@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { renderHook, act } from "@testing-library/react-hooks";
+import { renderHook } from "@testing-library/react-hooks";
 import { useFetch } from "../../hooks/useFetch";
 
 const url = 'https://www.breakingbadapi.com/api/quotes/1';
