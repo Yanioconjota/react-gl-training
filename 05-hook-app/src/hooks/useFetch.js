@@ -29,11 +29,16 @@ export const useFetch = (url) => {
           setState({
             loading: false,
             error: null,
-            data: data,
+            data
           });
-        } else {
-          console.warn('setState was not called!');
         }
+      })
+      .catch(() => {
+        setState({
+          data: null,
+          loading: false,
+          error: 'No se pudo cargar la información'
+        })
       })
   
     return () => {
