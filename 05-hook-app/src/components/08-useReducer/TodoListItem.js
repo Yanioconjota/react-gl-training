@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, ButtonGroup } from "react-bootstrap";
 
 const TodoListItem = ({ todo, index, handleDelete, handleToggle }) => {
   return (
@@ -12,11 +11,11 @@ const TodoListItem = ({ todo, index, handleDelete, handleToggle }) => {
         onClick={() => handleToggle(todo.id)}>
         {index + 1}. {todo.desc}
       </p>
-      <ButtonGroup>
-        <Button onClick={() => handleDelete(todo.id)} variant="danger">
+      <div className="btn-group">
+        <button onClick={() => handleDelete(todo.id)} className="btn btn-danger">
           ✖️
-        </Button>
-      </ButtonGroup>
+        </button>
+      </div>
     </li>
   );
 };

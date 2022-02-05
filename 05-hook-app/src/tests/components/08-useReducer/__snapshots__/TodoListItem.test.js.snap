@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pruebas con TodoListItem el componente debe mostrarse correctamente 1`] = `
+<li
+  className="list-group-item d-flex justify-content-between align-items-center"
+  key="1"
+>
+  <p
+    className="false"
+    onClick={[Function]}
+  >
+    1
+    . 
+    Aprender react
+  </p>
+  <div
+    className="btn-group"
+  >
+    <button
+      className="btn btn-danger"
+      onClick={[Function]}
+    >
+      ✖️
+    </button>
+  </div>
+</li>
+`;
