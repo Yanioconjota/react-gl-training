@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 import { HomeScreen } from '../../../components/09-useContext/HomeScreen';
 import { UserContext } from "../../../components/09-useContext/UserContext";
 
