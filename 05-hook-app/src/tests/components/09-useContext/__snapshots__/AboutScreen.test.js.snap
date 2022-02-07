@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pruebas con AboutScreen el componente debe mostrarse correctamente 1`] = `
+Array [
+  <h1>
+    About screen
+  </h1>,
+  <hr />,
+  <pre
+    className="Code mb-3"
+  />,
+  <button
+    className="btn btn-secondary"
+    onClick={[Function]}
+  >
+    Logout
+  </button>,
+]
+`;
