@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pruebas con TodoAdd debe mostrar el componente correctamente 1`] = `
+<Fragment>
+  <h4>
+    Agregar todo
+  </h4>
+  <hr />
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      autocompplete="off"
+      className="form-control"
+      name="description"
+      onChange={[Function]}
+      placeholder="Tengo que..."
+      type="text"
+      value=""
+    />
+    <div
+      className="d-grid mt-2"
+    >
+      <Button
+        active={false}
+        disabled={false}
+        type="submit"
+        variant="outline-primary"
+      >
+        Agregar
+      </Button>
+    </div>
+  </form>
+</Fragment>
+`;
