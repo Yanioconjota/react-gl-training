@@ -32,19 +32,11 @@ hr {
   background-color: transparent;
 }
 
-#root {
-  padding: 15px;
-}
-
 input.form-control {
-  // border: none;
-  // border-bottom: 1px solid magenta;
   border-color: #9d267f;
   background-color: transparent;
   border-radius: 0;
   color: #fff;
-  // padding-left: 0;
-  // padding-right: 0;
   &:focus {
     background-color: transparent;
     color: #fff;
@@ -102,6 +94,14 @@ code {
     color: #61dafb;
     text-decoration: none;
     margin: 5px;
+  }
+}
+
+.navbar-collapse {
+  .navbar-nav {
+    .nav-item.nav-link {
+      cursor: pointer;
+    }
   }
 }
 
