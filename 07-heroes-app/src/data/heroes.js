@@ -5,7 +5,7 @@ export const heroes = [
     publisher: "DC Comics",
     alter_ego: "Bruce Wayne",
     first_appearance: "Detective Comics #27",
-    characters: "Bruce Wayne",
+    characters: "Bruce Wayne, Dick Grayson, Thomas Wayne, Damian Wayne",
   },
   {
     id: "dc-superman",
@@ -44,17 +44,17 @@ export const heroes = [
     id: "dc-wonder",
     superhero: "Wonder Woman",
     publisher: "DC Comics",
-    alter_ego: "Princess Diana",
+    alter_ego: "Princess Diana of Temyschira",
     first_appearance: "All Star Comics #8",
-    characters: "Princess Diana",
+    characters: "Princess Diana of Temyschira",
   },
   {
     id: "dc-martian",
     superhero: "Martian Manhunter",
     publisher: "DC Comics",
-    alter_ego: "J'onn J'onzz",
+    alter_ego: "J'onn J'onzz (John Jones)",
     first_appearance: "Detective Comics #225",
-    characters: "Martian Manhunter",
+    characters: "J'onn J'onzz (John Jones)",
   },
   {
     id: "dc-robin",
@@ -86,7 +86,7 @@ export const heroes = [
     publisher: "Marvel Comics",
     alter_ego: "Peter Parker",
     first_appearance: "Amazing Fantasy #15",
-    characters: "Peter Parker",
+    characters: "Peter Parker, Miles Morales, Dr. Octoupus",
   },
   {
     id: "marvel-captain",
@@ -94,7 +94,7 @@ export const heroes = [
     publisher: "Marvel Comics",
     alter_ego: "Steve Rogers",
     first_appearance: "Captain America Comics #1",
-    characters: "Steve Rogers",
+    characters: "Steve Rogers, John F. Walker, Sam Wilson",
   },
   {
     id: "marvel-iron",
@@ -142,7 +142,7 @@ export const heroes = [
     publisher: "Marvel Comics",
     alter_ego: "Clinton Francis Barton",
     first_appearance: "Tales of Suspense #57",
-    characters: "Clinton Francis Barton",
+    characters: "Clinton Francis Barton, Kate Bishop",
   },
   {
     id: "marvel-cyclops",
