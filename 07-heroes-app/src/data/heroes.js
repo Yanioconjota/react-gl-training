@@ -82,7 +82,7 @@ export const heroes = [
   },
   {
     id: "marvel-spider",
-    superhero: "Spider Man",
+    superhero: "Spider-Man",
     publisher: "Marvel Comics",
     alter_ego: "Peter Parker",
     first_appearance: "Amazing Fantasy #15",
