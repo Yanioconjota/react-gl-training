@@ -1,11 +1,15 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
 
+  const navigate = useNavigate();
+
   const handleLogout = () => {
-    //por hacer
-    console.log('logout');
+    //como 2 argumento recibe opciones, donde replace reemplaza esta ruta para no poder volver con el go back del browser
+    navigate("/login", {
+      replace: true,
+    });
   }
 
   return (
