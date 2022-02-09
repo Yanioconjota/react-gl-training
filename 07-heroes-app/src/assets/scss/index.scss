@@ -1,9 +1,16 @@
 @import './CustomBootstrap.scss';
 
+$white: #fff;
+$black-bg: #121113;
+$info: #61dafb;
+$purple: #9d267f;
+$gray-bg: lighten($color: $black-bg, $amount: 10%);
+$lite-gray: lighten($color: $black-bg, $amount: 20%);
+
 body {
   width: 100%;
-  color: white;
-  background-color: #121113;
+  color: $white;
+  background-color: $black-bg;
 }
 
 .App-logo {
@@ -28,18 +35,18 @@ body {
 }
 
 hr {
-  border: 1px dashed #61dafb;
+  border: 1px dashed $info;
   background-color: transparent;
 }
 
 input.form-control {
-  border-color: #9d267f;
+  border-color: $purple;
   background-color: transparent;
   border-radius: 0;
-  color: #fff;
+  color: $white;
   &:focus {
     background-color: transparent;
-    color: #fff;
+    color: $white;
     box-shadow: none;
   }
 }
@@ -60,7 +67,7 @@ code {
 }
 
 .App-link {
-  color: #61dafb;
+  color: $info;
 }
 
 @keyframes App-logo-spin {
@@ -91,7 +98,7 @@ code {
   @extend .D-flex;
 
   >* {
-    color: #61dafb;
+    color: $info;
     text-decoration: none;
     margin: 5px;
   }
@@ -106,10 +113,17 @@ code {
 }
 
 .card {
-  background-color: #525252;
+  background-color: $gray-bg;
   margin-bottom: 5px;
   border: none;
   p {
     margin-bottom: 5px;
   }
+}
+
+.list-group-item,
+.img-thumbnail {
+  background-color: $lite-gray;
+  color: $white;
+  border-color: $black-bg;
 }
