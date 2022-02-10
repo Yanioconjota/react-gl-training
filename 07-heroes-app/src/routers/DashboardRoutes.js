@@ -3,7 +3,7 @@ import { Navbar } from '../components/ui/NavBar';
 import { DcScreen } from '../components/dc/DcScreen';
 import { MarvelScreen } from '../components/marvel/MarvelScreen';
 import { SearchScreen } from '../components/search/SearchScreen';
-import { HeroScreen } from "../components/heroes/Hero";
+import { HeroScreen } from "../components/heroes/HeroScreen";
 
 const DashboardRoutes = () => {
   return (

@@ -6,10 +6,12 @@ import DashboardRoutes from './DashboardRoutes';
 const AppRouter = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<LoginScreen />} />
-        <Route path="/*" element={<DashboardRoutes />} />
-      </Routes>
+      <div>
+        <Routes>
+          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/*" element={<DashboardRoutes />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 };

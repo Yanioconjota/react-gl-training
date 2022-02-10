@@ -13,12 +13,16 @@ export const LoginScreen = () => {
   };
 
   return (
-    <>
-      <h1>Login</h1>
-      <hr />
-      <button className="btn btn-primary" onClick={handleLogin}>
-        Login
-      </button>
-    </>
+    <div class="container-fluid mt-3">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Login</h1>
+          <hr />
+          <button className="btn btn-primary" onClick={handleLogin}>
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };
