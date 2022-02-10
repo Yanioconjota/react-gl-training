@@ -9,6 +9,10 @@ $purple: #9d267f;
 $gray-bg: lighten($color: $black-bg, $amount: 10%);
 $lite-gray: lighten($color: $black-bg, $amount: 20%);
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   width: 100%;
   color: $white;

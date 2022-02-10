@@ -36,7 +36,7 @@ export const Navbar = () => {
               activeclassname="active"
               className="nav-item nav-link"
               to="/search">
-              Search
+              Buscar
             </NavLink>
           </div>
         </div>
