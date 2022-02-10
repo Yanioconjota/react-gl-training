@@ -16,7 +16,7 @@ export const Navbar = () => {
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          Asociaciones
+          <strong>HEROAPP</strong>
         </Link>
         <div className="navbar-collapse">
           <div className="navbar-nav">
