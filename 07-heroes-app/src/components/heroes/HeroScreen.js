@@ -16,8 +16,7 @@ export const HeroScreen = () => {
     return <Navigate to="/" />;
   }
 
-  const { id, superhero, publisher, alter_ego, first_appearance, characters } =
-    hero;
+  const { id, superhero, publisher, alter_ego, first_appearance, characters } = hero;
 
   const imagePath = `/assets/img/${heroId}.jpg`;
 
