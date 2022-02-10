@@ -1,33 +1,26 @@
+import { useMemo } from "react";
 import { Navigate, useParams, useNavigate } from "react-router-dom";
 import { getHeroById } from "../../selectors/getHeroById";
 
 export const HeroScreen = () => {
-
   const { heroId } = useParams();
-
-  //const [heroPath, setHeroPath] = useState('');
 
   const navigate = useNavigate();
 
   console.log(heroId);
 
-  const hero = getHeroById(heroId);
+  //Agregamos el hook useMemo para que el método getHeroById se dispare únicamente cuando cambie el heroId. useMemo recibe un callback que regresa un valor que es el que va a memorizar y luegos las dependencias que van a hacer que se vuelva a memorizar el valor cuando cambia
+  const hero = useMemo(() => getHeroById(heroId), [heroId]);
 
   if (!hero) {
-    return <Navigate to='/'/>
+    return <Navigate to="/" />;
   }
 
-  const {
-    id,
-    superhero,
-    publisher,
-    alter_ego,
-    first_appearance,
-    characters
-  } = hero;
+  const { id, superhero, publisher, alter_ego, first_appearance, characters } =
+    hero;
 
   const imagePath = `/assets/img/${heroId}.jpg`;
-  
+
   const handleReturn = () => {
     //-1 vuelve a la pantalla anterior
     navigate(-1);
@@ -36,10 +29,14 @@ export const HeroScreen = () => {
   return (
     <div className="row">
       <div className="col-4">
-        <img src={imagePath} alt={id} className="img-thumbnail" />
+        <img
+          src={imagePath}
+          alt={id}
+          className="img-thumbnail animate__animated animate__fadeInLeft"
+        />
       </div>
       <div className="col-8">
-        <ul className="list-group">
+        <ul className="list-group animate__animated animate__fadeInDown">
           <li className="list-group-item">
             <h3>{superhero}</h3>
           </li>
@@ -63,8 +60,9 @@ export const HeroScreen = () => {
           )}
         </ul>
         <button
-          className="mt-3 btn btn-outline-info"
-          onClick={handleReturn}>
+          className="mt-3 btn btn-outline-info animate__animated animate__fadeInRight"
+          onClick={handleReturn}
+        >
           Return
         </button>
       </div>
