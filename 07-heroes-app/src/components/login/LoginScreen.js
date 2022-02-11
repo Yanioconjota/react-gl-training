@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { types } from "../../types/types";
+import { AuthContext } from '../../auth/authContext';
 
 export const LoginScreen = () => {
 
   const navigate = useNavigate();
 
+  const { dispatch } = useContext(AuthContext);
+
   const handleLogin = () => {
+    const action = {
+      type: types.login,
+      payload: {
+        name: 'Homero Thompson'
+      },
+    };
+    
+    dispatch(action);
+
     //como 2 argumento recibe opciones, donde replace reemplaza esta ruta para no poder volver con el go back del browser
     navigate('/marvel', {
       replace: true
