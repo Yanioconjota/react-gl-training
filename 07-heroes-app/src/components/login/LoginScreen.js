@@ -13,9 +13,9 @@ export const LoginScreen = () => {
   };
 
   return (
-    <div class="container-fluid mt-3">
-      <div class="row">
-        <div class="col-xs-12">
+    <div className="container-fluid mt-3">
+      <div className="row">
+        <div className="col-xs-12">
           <h1>Login</h1>
           <hr />
           <button className="btn btn-primary" onClick={handleLogin}>
