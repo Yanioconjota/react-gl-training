@@ -26,6 +26,7 @@ export const SearchScreen = () => {
     //console.log(searchText);
     //navegamos a esta misma pantalla pero pasándo como params el valor de search text
     navigate(`?q=${searchText}`);
+    
   };
 
   return (

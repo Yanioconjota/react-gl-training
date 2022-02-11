@@ -16,12 +16,14 @@ export const LoginScreen = () => {
         name: 'Homero Thompson'
       },
     };
-    
+
     dispatch(action);
 
+    const lastPath = localStorage.getItem('lastPath') || '/marvel';
+
     //como 2 argumento recibe opciones, donde replace reemplaza esta ruta para no poder volver con el go back del browser
-    navigate('/marvel', {
-      replace: true
+    navigate(lastPath, {
+      replace: true,
     });
   };
 

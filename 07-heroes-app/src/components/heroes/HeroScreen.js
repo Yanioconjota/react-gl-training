@@ -7,8 +7,6 @@ export const HeroScreen = () => {
 
   const navigate = useNavigate();
 
-  console.log(heroId);
-
   //Agregamos el hook useMemo para que el método getHeroById se dispare únicamente cuando cambie el heroId. useMemo recibe un callback que regresa un valor que es el que va a memorizar y luegos las dependencias que van a hacer que se vuelva a memorizar el valor cuando cambia
   const hero = useMemo(() => getHeroById(heroId), [heroId]);
 
