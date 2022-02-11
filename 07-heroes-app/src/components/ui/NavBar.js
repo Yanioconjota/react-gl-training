@@ -35,6 +35,12 @@ export const Navbar = () => {
             <NavLink
               activeclassname="active"
               className="nav-item nav-link"
+              to="/all">
+              Todos
+            </NavLink>
+            <NavLink
+              activeclassname="active"
+              className="nav-item nav-link"
               to="/search">
               Buscar
             </NavLink>
