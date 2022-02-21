@@ -1,6 +1,435 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pruebas con DashboardRoutes debe mostrarse correctamente 1`] = `
+exports[`Pruebas con DashboardRoutes debe mostrarse correctamente la ruta DC 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-sm navbar-dark bg-dark"
+  >
+    <div
+      className="container-fluid"
+    >
+      <a
+        className="navbar-brand"
+        href="/"
+        onClick={[Function]}
+      >
+        <strong>
+          HEROAPP
+        </strong>
+      </a>
+      <div
+        className="navbar-collapse"
+      >
+        <div
+          className="navbar-nav"
+        >
+          <a
+            activeclassname="active"
+            className="nav-item nav-link"
+            href="/marvel"
+            onClick={[Function]}
+          >
+            Marvel
+          </a>
+          <a
+            activeclassname="active"
+            aria-current="page"
+            className="nav-item nav-link active"
+            href="/dc"
+            onClick={[Function]}
+          >
+            DC
+          </a>
+          <a
+            activeclassname="active"
+            className="nav-item nav-link"
+            href="/all"
+            onClick={[Function]}
+          >
+            Todos
+          </a>
+          <a
+            activeclassname="active"
+            className="nav-item nav-link"
+            href="/search"
+            onClick={[Function]}
+          >
+            Buscar
+          </a>
+        </div>
+      </div>
+      <div
+        className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end"
+      >
+        <ul
+          className="navbar-nav ml-auto"
+        >
+          <li
+            className="nav-item nav-link text-info"
+          >
+            <span>
+              Homero
+            </span>
+          </li>
+          <li
+            className="nav-item nav-link"
+            onClick={[Function]}
+          >
+            Logout
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="container-fluid mt-3"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-xs-12"
+      >
+        Array [
+          <h1>
+            DC Screen
+          </h1>,
+          <hr />,
+          <div
+            className="row
+ rows-cols-1
+ row-cols-md-3 g-3
+ animate__animated animate__fadeIn"
+          >
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Batman"
+                  className="card-img-top"
+                  src="./assets/img/dc-batman.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Batman
+                  </h2>
+                  <p>
+                    DC Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/dc-batman"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Black Canary"
+                  className="card-img-top"
+                  src="./assets/img/dc-black.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Black Canary
+                  </h2>
+                  <p>
+                    DC Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/dc-black"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Blue Beetle"
+                  className="card-img-top"
+                  src="./assets/img/dc-blue.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Blue Beetle
+                  </h2>
+                  <p>
+                    DC Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/dc-blue"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Flash"
+                  className="card-img-top"
+                  src="./assets/img/dc-flash.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Flash
+                  </h2>
+                  <p>
+                    DC Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/dc-flash"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Green Arrow"
+                  className="card-img-top"
+                  src="./assets/img/dc-arrow.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Green Arrow
+                  </h2>
+                  <p>
+                    DC Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/dc-arrow"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Green Lantern"
+                  className="card-img-top"
+                  src="./assets/img/dc-green.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Green Lantern
+                  </h2>
+                  <p>
+                    DC Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/dc-green"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Martian Manhunter"
+                  className="card-img-top"
+                  src="./assets/img/dc-martian.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Martian Manhunter
+                  </h2>
+                  <p>
+                    DC Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/dc-martian"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Robin/Nightwing"
+                  className="card-img-top"
+                  src="./assets/img/dc-robin.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Robin/Nightwing
+                  </h2>
+                  <p>
+                    DC Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/dc-robin"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Superman"
+                  className="card-img-top"
+                  src="./assets/img/dc-superman.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Superman
+                  </h2>
+                  <p>
+                    DC Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/dc-superman"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Wonder Woman"
+                  className="card-img-top"
+                  src="./assets/img/dc-wonder.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Wonder Woman
+                  </h2>
+                  <p>
+                    DC Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/dc-wonder"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>,
+        ]
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Pruebas con DashboardRoutes debe mostrarse correctamente la ruta por defecto (Marvel) 1`] = `
 Array [
   <nav
     className="navbar navbar-expand-sm navbar-dark bg-dark"

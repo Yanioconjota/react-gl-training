@@ -12,18 +12,32 @@ describe('Pruebas con DashboardRoutes', () => {
       name: 'Homero'
     }
   };
-  test('debe mostrarse correctamente', () => {
+  test('debe mostrarse correctamente la ruta por defecto (Marvel)', () => {
     
     const wrapper = mount(
       <AuthContext.Provider value={contextValue}>
         {/* Permite hacer pruebas en componentes que hacen uso del useNavigate */}
-        <MemoryRouter>
+        <MemoryRouter initialEntries={ ['/'] }>
           <DashboardRoutes />
         </MemoryRouter>
       </AuthContext.Provider>
     );
-    console.log(wrapper.html());
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.find('.text-info > span').text().trim()).toBe('Homero');
+    expect(wrapper.find('h1').text().trim()).toBe('Marvel Screen');
+  });
+
+  test('debe mostrarse correctamente la ruta DC', () => {
+    
+    const wrapper = mount(
+      <AuthContext.Provider value={contextValue}>
+        {/* Permite hacer pruebas en componentes que hacen uso del useNavigate */}
+        <MemoryRouter initialEntries={ ['/dc'] }>
+          <DashboardRoutes />
+        </MemoryRouter>
+      </AuthContext.Provider>
+    );
+    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find('h1').text().trim()).toBe('DC Screen');
   });
 });
