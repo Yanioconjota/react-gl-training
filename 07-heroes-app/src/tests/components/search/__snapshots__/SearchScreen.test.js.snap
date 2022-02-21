@@ -1,5 +1,150 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Pruebas con SearchScreen Debe mostrar a Batman y el input con el valor del queryString 1`] = `
+Array [
+  <h1>
+    Hero Search
+  </h1>,
+  <hr />,
+  <div
+    className="row"
+  >
+    <div
+      className="col-5"
+    >
+      <div
+        className="h4"
+      >
+        Buscar
+      </div>
+      <hr />
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          autoComplete="off"
+          className="form-control"
+          name="searchText"
+          onChange={[Function]}
+          placeholder="Hero name"
+          type="text"
+          value="batman"
+        />
+        <button
+          className="btn btn-primary btn-block w-100 mt-3"
+          type="submit"
+        >
+          Buscar
+        </button>
+      </form>
+    </div>
+    <div
+      className="col-7 search-hero"
+    >
+      <h4>
+        Resultados
+      </h4>
+      <hr />
+      <div
+        className="row"
+      >
+        <div
+          className="card col-12 col-md-4 animate__animated animate__fadeInRight"
+        >
+          <div
+            className="row no-gutters"
+          >
+            <img
+              alt="Batman"
+              className="card-img-top"
+              src="./assets/img/dc-batman.jpg"
+            />
+            <div
+              className="card-body px-4"
+            >
+              <h2
+                className="card-title"
+              >
+                Batman
+              </h2>
+              <p>
+                DC Comics
+              </p>
+              <a
+                className="btn w-100 mt-3 btn-info"
+                href="/hero/dc-batman"
+                onClick={[Function]}
+              >
+                Mas info...
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Pruebas con SearchScreen Debe mostrar un error si no se encuentra el héroe 1`] = `
+Array [
+  <h1>
+    Hero Search
+  </h1>,
+  <hr />,
+  <div
+    className="row"
+  >
+    <div
+      className="col-5"
+    >
+      <div
+        className="h4"
+      >
+        Buscar
+      </div>
+      <hr />
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          autoComplete="off"
+          className="form-control"
+          name="searchText"
+          onChange={[Function]}
+          placeholder="Hero name"
+          type="text"
+          value="bacman"
+        />
+        <button
+          className="btn btn-primary btn-block w-100 mt-3"
+          type="submit"
+        >
+          Buscar
+        </button>
+      </form>
+    </div>
+    <div
+      className="col-7 search-hero"
+    >
+      <h4>
+        Resultados
+      </h4>
+      <hr />
+      <div
+        className="alert alert-danger animate__animated animate__fadeInRight"
+      >
+        No se encotraron heroes: 
+        bacman
+      </div>
+      <div
+        className="row"
+      />
+    </div>
+  </div>,
+]
+`;
+
 exports[`Pruebas con SearchScreen debe mostrarse correctamente con valores por defecto 1`] = `
 Array [
   <h1>
