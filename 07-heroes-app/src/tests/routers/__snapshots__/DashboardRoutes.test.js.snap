@@ -1,0 +1,429 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas con DashboardRoutes debe mostrarse correctamente 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-sm navbar-dark bg-dark"
+  >
+    <div
+      className="container-fluid"
+    >
+      <a
+        className="navbar-brand"
+        href="/"
+        onClick={[Function]}
+      >
+        <strong>
+          HEROAPP
+        </strong>
+      </a>
+      <div
+        className="navbar-collapse"
+      >
+        <div
+          className="navbar-nav"
+        >
+          <a
+            activeclassname="active"
+            className="nav-item nav-link"
+            href="/marvel"
+            onClick={[Function]}
+          >
+            Marvel
+          </a>
+          <a
+            activeclassname="active"
+            className="nav-item nav-link"
+            href="/dc"
+            onClick={[Function]}
+          >
+            DC
+          </a>
+          <a
+            activeclassname="active"
+            className="nav-item nav-link"
+            href="/all"
+            onClick={[Function]}
+          >
+            Todos
+          </a>
+          <a
+            activeclassname="active"
+            className="nav-item nav-link"
+            href="/search"
+            onClick={[Function]}
+          >
+            Buscar
+          </a>
+        </div>
+      </div>
+      <div
+        className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end"
+      >
+        <ul
+          className="navbar-nav ml-auto"
+        >
+          <li
+            className="nav-item nav-link text-info"
+          >
+            <span>
+              Homero
+            </span>
+          </li>
+          <li
+            className="nav-item nav-link"
+            onClick={[Function]}
+          >
+            Logout
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="container-fluid mt-3"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-xs-12"
+      >
+        Array [
+          <h1>
+            Marvel Screen
+          </h1>,
+          <hr />,
+          <div
+            className="row
+ rows-cols-1
+ row-cols-md-3 g-3
+ animate__animated animate__fadeIn"
+          >
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Captain America"
+                  className="card-img-top"
+                  src="./assets/img/marvel-captain.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Captain America
+                  </h2>
+                  <p>
+                    Marvel Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/marvel-captain"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Cyclops"
+                  className="card-img-top"
+                  src="./assets/img/marvel-cyclops.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Cyclops
+                  </h2>
+                  <p>
+                    Marvel Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/marvel-cyclops"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Daredevil"
+                  className="card-img-top"
+                  src="./assets/img/marvel-daredevil.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Daredevil
+                  </h2>
+                  <p>
+                    Marvel Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/marvel-daredevil"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Hawkeye"
+                  className="card-img-top"
+                  src="./assets/img/marvel-hawkeye.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Hawkeye
+                  </h2>
+                  <p>
+                    Marvel Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/marvel-hawkeye"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Hulk"
+                  className="card-img-top"
+                  src="./assets/img/marvel-hulk.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Hulk
+                  </h2>
+                  <p>
+                    Marvel Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/marvel-hulk"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Iron Man"
+                  className="card-img-top"
+                  src="./assets/img/marvel-iron.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Iron Man
+                  </h2>
+                  <p>
+                    Marvel Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/marvel-iron"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Silver Surfer"
+                  className="card-img-top"
+                  src="./assets/img/marvel-silver.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Silver Surfer
+                  </h2>
+                  <p>
+                    Marvel Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/marvel-silver"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Spider-Man"
+                  className="card-img-top"
+                  src="./assets/img/marvel-spider.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Spider-Man
+                  </h2>
+                  <p>
+                    Marvel Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/marvel-spider"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Thor"
+                  className="card-img-top"
+                  src="./assets/img/marvel-thor.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Thor
+                  </h2>
+                  <p>
+                    Marvel Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/marvel-thor"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card col-6 col-md-3 col-lg-2"
+            >
+              <div
+                className="row no-gutters"
+              >
+                <img
+                  alt="Wolverine"
+                  className="card-img-top"
+                  src="./assets/img/marvel-wolverine.jpg"
+                />
+                <div
+                  className="card-body px-4"
+                >
+                  <h2
+                    className="card-title"
+                  >
+                    Wolverine
+                  </h2>
+                  <p>
+                    Marvel Comics
+                  </p>
+                  <a
+                    className="btn w-100 mt-3 btn-info"
+                    href="/hero/marvel-wolverine"
+                    onClick={[Function]}
+                  >
+                    Mas info...
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>,
+        ]
+      </div>
+    </div>
+  </div>,
+]
+`;
