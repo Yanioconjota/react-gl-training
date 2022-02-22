@@ -3,11 +3,6 @@ import { authReducer } from "../../auth/authReducer";
 import { types } from "../../types/types";
 
 describe('pruebas con authReducer', () => {
-
-  const typesDemo = {
-    login: '[auth] Login',
-    logout: '[auth] Logout',
-  };
   test('debe retornar el estado por defecto', () => {
     const state = authReducer({logged: false}, {});
     //El estado inicial es logged en false

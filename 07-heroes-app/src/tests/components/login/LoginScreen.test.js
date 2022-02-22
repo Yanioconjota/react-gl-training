@@ -3,6 +3,7 @@ import { mount } from "enzyme";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { AuthContext } from "../../../auth/authContext";
 import { LoginScreen } from "../../../components/login/LoginScreen";
+import { types } from "../../../types/types";
 
 const mockNavigate = jest.fn();
 
@@ -12,10 +13,6 @@ jest.mock("react-router-dom", () => ({
 }));
 
 describe('Pruebas con LoginScreen', () => {
-  const typesDemo = {
-    login: "[auth] Login",
-    logout: "[auth] Logout",
-  };
 
   const contextValue = {
     user: {
@@ -46,7 +43,7 @@ describe('Pruebas con LoginScreen', () => {
 
     expect(contextValue.dispatch).toHaveBeenCalledWith({
       payload: { name: 'Homero Thompson' },
-      type: typesDemo.login,
+      type: types.login,
     });
 
     expect(mockNavigate).toHaveBeenCalledWith("/marvel", { replace: true });

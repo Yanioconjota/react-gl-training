@@ -3,6 +3,7 @@ import { mount } from "enzyme";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { AuthContext } from "../../auth/authContext";
 import { Navbar } from "../../components/ui/NavBar";
+import { types } from "../../types/types";
 
 const mockNavigate = jest.fn();
 
@@ -12,11 +13,6 @@ jest.mock("react-router-dom", () => ({
 }));
 
 describe('Pruebas con Navbar', () => {
-
-  const typesDemo = {
-    login: "[auth] Login",
-    logout: "[auth] Logout",
-  };
 
   const contextValue = {
     user: {
@@ -45,7 +41,7 @@ describe('Pruebas con Navbar', () => {
     wrapper.find('#logout').simulate('click');
     //expect(handleLogout).toHaveBeenCalled();
     expect(contextValue.dispatch).toHaveBeenCalledWith({
-      type: typesDemo.logout,
+      type: types.logout,
     });
     expect(mockNavigate).toHaveBeenCalledWith('/login', {replace: true});
   });
