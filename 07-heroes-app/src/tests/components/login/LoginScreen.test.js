@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { mount } from "enzyme";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
-import { AuthContext } from "../../auth/authContext";
+import { AuthContext } from "../../../auth/authContext";
 import { LoginScreen } from "../../../components/login/LoginScreen";
 
 const mockNavigate = jest.fn();
@@ -12,11 +12,14 @@ jest.mock("react-router-dom", () => ({
 }));
 
 describe('Pruebas con LoginScreen', () => {
+  const typesDemo = {
+    login: "[auth] Login",
+    logout: "[auth] Logout",
+  };
 
   const contextValue = {
     user: {
-      logged: true,
-      name: "Homero",
+      logged: false,
     },
     dispatch: jest.fn(),
   };
@@ -24,15 +27,34 @@ describe('Pruebas con LoginScreen', () => {
   const wrapper = mount(
     <AuthContext.Provider value={contextValue}>
       {/* Permite hacer pruebas en componentes que hacen uso del useNavigate */}
-      <MemoryRouter initialEntries={["/"]}>
+      <MemoryRouter initialEntries={["/login"]}>
         <Routes>
-          <Route path="/" element={<LoginScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
         </Routes>
       </MemoryRouter>
     </AuthContext.Provider>
   );
 
-  test('debe mostrarse correctamente', () => {
+  test("debe mostrarse correctamente", () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  test("debe llamar el login, el navigate y el dispatch con los parámetros correctos", () => {
+    const handleClick = wrapper.find("button").prop("onClick");
+
+    handleClick();
+
+    expect(contextValue.dispatch).toHaveBeenCalledWith({
+      payload: { name: 'Homero Thompson' },
+      type: typesDemo.login,
+    });
+
+    expect(mockNavigate).toHaveBeenCalledWith("/marvel", { replace: true });
+
+    localStorage.setItem('lastPath', '/dc');
+
+    handleClick();
+
+    expect(mockNavigate).toHaveBeenCalledWith("/dc", { replace: true });
   });
 });
