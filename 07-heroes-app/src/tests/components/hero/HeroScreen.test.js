@@ -54,4 +54,18 @@ describe('Pruebas con HeroScreen', () => {
     expect(wrapper.find('.row').exists()).toBe(false);
     expect(wrapper.find('h1').text().trim()).toBe('No hero page');
   });
+
+  test('Debe regresar a la pantalla anterior', () => {
+    const wrapper = mount(
+      <MemoryRouter initialEntries={["/hero/marvel-spider"]}>
+        <Routes>
+          {/* heroId recibe el string correspondiente al initialEntry */}
+          <Route path="/hero/:heroId" element={<HeroScreen />} />
+        </Routes>
+      </MemoryRouter>
+    );
+    const handleClick = wrapper.find('button').prop('onClick');
+    handleClick();
+    expect(mockNavigate).toHaveBeenCalledWith(-1);
+  });
 });
