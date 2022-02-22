@@ -73,6 +73,7 @@ Array [
           </li>
           <li
             className="nav-item nav-link"
+            id="logout"
             onClick={[Function]}
           >
             Logout
@@ -501,6 +502,7 @@ Array [
           </li>
           <li
             className="nav-item nav-link"
+            id="logout"
             onClick={[Function]}
           >
             Logout

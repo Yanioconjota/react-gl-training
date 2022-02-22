@@ -73,6 +73,7 @@ exports[`pruebas con AppRouter debe mostrar el componente Marvel si el usuario e
             </li>
             <li
               className="nav-item nav-link"
+              id="logout"
               onClick={[Function]}
             >
               Logout

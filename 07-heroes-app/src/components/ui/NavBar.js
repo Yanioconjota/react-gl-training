@@ -58,7 +58,7 @@ export const Navbar = () => {
             <li className="nav-item nav-link text-info">
               <span>{name}</span>
             </li>
-            <li className="nav-item nav-link"
+            <li id="logout" className="nav-item nav-link"
               onClick={handleLogout}>
               Logout
             </li>
