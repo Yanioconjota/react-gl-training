@@ -1,19 +1,23 @@
 import { Link } from "react-router-dom";
 
+import { heroImages } from '../../helpers/heroImages';
+
 const HeroCard = ({
   id,
   superhero,
   publisher,
   customClass = 'col-6 col-md-3 col-lg-2'
 }) => {
-  const imagePath = `./assets/img/${id}.jpg`;
+  //const imagePath = `./assets/img/${id}.jpg`;
   
   return (
     <div
       className={`card ${customClass}`}
     >
       <div className="row no-gutters">
-        <img src={imagePath} className="card-img-top" alt={superhero} />
+        <img className="card-img-top" alt={superhero}
+             //src={imagePath}
+              src={heroImages(`./${id}.jpg`)}/>
         <div className="card-body px-4">
           <h2 className="card-title">{superhero}</h2>
           <p>{publisher}</p>
