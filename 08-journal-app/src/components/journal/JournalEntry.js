@@ -8,7 +8,7 @@ export const JournalEntry = () => {
         style={{
           backgroundSize: "cover",
           backgroundImage:
-            "url(https://static2.srcdn.com/wordpress/wp-content/uploads/2020/12/Cyberpunk-2077-Gang-Robot.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5)",
+            "url(https://as01.epimg.net/meristation/imagenes/2022/02/20/noticias/1645347632_156651_1645347771_noticia_normal.jpg)",
         }}
       ></div>
       <div className="journal__entry-body">
@@ -16,8 +16,8 @@ export const JournalEntry = () => {
         <p className="journal__entry-content">If it looks like chicken, tastes like chicken, and feels like chicken but Chuck Norris says its beef, then it’s beef.</p>
       </div>
       <div className="journal__entry-date-box">
-          <span>Monday</span>
-          <h4>28</h4>
+          <span>Friday</span>
+          <h4>03</h4>
         </div>
     </div>
   );
