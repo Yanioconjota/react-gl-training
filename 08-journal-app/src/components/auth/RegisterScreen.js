@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import validator from 'validator';
 import { useForm } from '../../hooks/useForm';
+import { uiReducer } from '../../reducers/uiReducer';
+import { types } from '../../types/types';
 
 export const RegisterScreen = () => {
+
+  const dispatch = useDispatch();
 
   const [formValues, handleInputChange] = useForm({
     name: 'Homero',
