@@ -1,13 +1,13 @@
 import { types } from "../types/types";
-import { googleAuthProvider } from "../firebase/firebase-config";
 import {
+  googleAuthProvider,
   getAuth,
   signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
-  updateProfile 
-} from "firebase/auth";
+  updateProfile,
+} from "../firebase/firebase-config";
 import { finishLoading, startLoading } from "./ui";
 
 //gracias al midleware thunk-redux tenemos acceso al dispatch dentro del return
