@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import validator from 'validator';
 import { useForm } from '../../hooks/useForm';
 import { setError, removeError } from "../../actions/ui";
+import { startRegisterWithEmailPasswordName } from '../../actions/auth';
 
 export const RegisterScreen = () => {
 
@@ -24,7 +25,7 @@ export const RegisterScreen = () => {
     e.preventDefault();
     
     if (isFormValid()) {
-      console.log('VALID FORM!');
+      dispatch(startRegisterWithEmailPasswordName(email, password, name));
     }
 
   }
@@ -88,7 +89,7 @@ export const RegisterScreen = () => {
                className="auth__input"/>
 
         <button type="submit"
-                className="btn btn-primary btn-block mb-5">Login
+                className="btn btn-primary btn-block mb-5">Register
         </button>
         <Link className="link" to="/auth/login">
           Already registered?
