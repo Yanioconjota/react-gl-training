@@ -1,12 +1,21 @@
 import { types } from "../types/types";
-import { firebase, googleAuthProvider } from "../firebase/firebase-config";
+import { googleAuthProvider } from "../firebase/firebase-config";
+import {
+  getAuth,
+  signInWithPopup,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+  updateProfile 
+} from "firebase/auth";
 import { finishLoading, startLoading } from "./ui";
 
 //gracias al midleware thunk-redux tenemos acceso al dispatch dentro del return
 export const startLoginWithEmailPassword = (email, password) => {
   return (dispatch) => {
+    const auth = getAuth();
     dispatch(startLoading());
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         dispatch(login(user.uid, user.displayName));
         dispatch(finishLoading());
@@ -20,15 +29,16 @@ export const startLoginWithEmailPassword = (email, password) => {
 
 export const startRegisterWithEmailPasswordName = (email, password, name) => {
   return (dispatch) => {
+    const auth = getAuth();
     dispatch(startLoading());
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then( async ({ user }) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(async ({ user }) => {
         //update profile agrega el displayName, ya que este solo se crea cuando nos registramos con google o cualquier red social
-        await user.updateProfile({ displayName: name });
+        await updateProfile(user, { displayName: name });
         dispatch(login(user.uid, user.displayName));
-         dispatch(finishLoading());
+        dispatch(finishLoading());
       })
-      .catch( err => {
+      .catch((err) => {
         console.log(err);
         dispatch(finishLoading());
       });
@@ -37,7 +47,8 @@ export const startRegisterWithEmailPasswordName = (email, password, name) => {
 
 export const startGoogleLogin = () => {
   return (dispatch) => {
-    firebase.auth().signInWithPopup(googleAuthProvider)
+    const auth = getAuth();
+    signInWithPopup(auth, googleAuthProvider)
       .then(({ user }) => {
         dispatch(login(user.uid, user.displayName));
       });
@@ -54,7 +65,8 @@ export const login = (uid, displayName) => ({
 
 export const startLogout = () => {
   return async (dispatch) => {
-    await firebase.auth().signOut();
+    const auth = getAuth();
+    await signOut(auth);
     dispatch(logout());
   }
 };
