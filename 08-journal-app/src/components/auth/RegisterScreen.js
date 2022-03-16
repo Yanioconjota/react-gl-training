@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import validator from 'validator';
 import { useForm } from '../../hooks/useForm';
-import { uiReducer } from '../../reducers/uiReducer';
-import { types } from '../../types/types';
+import { setError, removeError } from "../../actions/ui";
 
 export const RegisterScreen = () => {
 
@@ -31,16 +30,17 @@ export const RegisterScreen = () => {
   const isFormValid = () => {
 
     if (name.trim().length === 0) {
-      console.log('Name is required!');
+      dispatch(setError('Name is required!'));
       return false;
     } else if( !validator.isEmail(email) ) {
-      console.log('invalid email!');
+      dispatch(setError('invalid email!'));
       return false;
     } else if ( password !== password2 || password.length < 5) {
-      console.log('Password should be at least 6 characters and match with each other!');
+      dispatch(setError('Password should be at least 6 characters and match with each other!'));
       return false;
     }
-    
+    //remove error
+    dispatch(removeError());
     return true;
   };
 
