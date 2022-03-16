@@ -28,7 +28,7 @@ export const RegisterScreen = () => {
       dispatch(startRegisterWithEmailPasswordName(email, password, name));
     }
 
-  }
+  };
 
   const isFormValid = () => {
 
