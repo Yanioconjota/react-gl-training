@@ -10,7 +10,7 @@ export const RegisterScreen = () => {
 
   const dispatch = useDispatch();
 
-  const { msgError } = useSelector( state => state.ui );
+  const { msgError, loading } = useSelector( state => state.ui );
 
   const [formValues, handleInputChange] = useForm({
     name: 'Homero',
@@ -89,6 +89,7 @@ export const RegisterScreen = () => {
                className="auth__input"/>
 
         <button type="submit"
+                disabled={ loading }
                 className="btn btn-primary btn-block mb-5">Register
         </button>
         <Link className="link" to="/auth/login">

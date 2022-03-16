@@ -20,13 +20,18 @@ export const startLoginWithEmailPassword = (email, password) => {
 
 export const startRegisterWithEmailPasswordName = (email, password, name) => {
   return (dispatch) => {
+    dispatch(startLoading());
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then( async ({ user }) => {
         //update profile agrega el displayName, ya que este solo se crea cuando nos registramos con google o cualquier red social
         await user.updateProfile({ displayName: name });
         dispatch(login(user.uid, user.displayName));
+         dispatch(finishLoading());
       })
-      .catch( console.log );
+      .catch( err => {
+        console.log(err);
+        dispatch(finishLoading());
+      });
   }
 };
 
