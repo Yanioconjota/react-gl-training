@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import { types } from "../types/types";
 import {
   googleAuthProvider,
@@ -20,9 +21,10 @@ export const startLoginWithEmailPassword = (email, password) => {
         dispatch(login(user.uid, user.displayName));
         dispatch(finishLoading());
       })
-      .catch( err => {
-        console.log(err);
+      .catch((err) => {
         dispatch(finishLoading());
+        //mensaje de error en modal
+        Swal.fire('Error', err.message, 'error');
       });
   };
 };
@@ -39,20 +41,20 @@ export const startRegisterWithEmailPasswordName = (email, password, name) => {
         dispatch(finishLoading());
       })
       .catch((err) => {
-        console.log(err);
         dispatch(finishLoading());
+        //mensaje de error en modal
+        Swal.fire("Error", err.message, "error");
       });
-  }
+  };
 };
 
 export const startGoogleLogin = () => {
   return (dispatch) => {
     const auth = getAuth();
-    signInWithPopup(auth, googleAuthProvider)
-      .then(({ user }) => {
-        dispatch(login(user.uid, user.displayName));
-      });
-  }
+    signInWithPopup(auth, googleAuthProvider).then(({ user }) => {
+      dispatch(login(user.uid, user.displayName));
+    });
+  };
 };
 
 export const login = (uid, displayName) => ({
@@ -60,7 +62,7 @@ export const login = (uid, displayName) => ({
   payload: {
     uid,
     displayName,
-  }
+  },
 });
 
 export const startLogout = () => {
@@ -68,9 +70,9 @@ export const startLogout = () => {
     const auth = getAuth();
     await signOut(auth);
     dispatch(logout());
-  }
+  };
 };
 
 export const logout = () => ({
-  type: types.logout
+  type: types.logout,
 });
