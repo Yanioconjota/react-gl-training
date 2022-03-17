@@ -13,12 +13,15 @@ export const JournalEntry = () => {
       ></div>
       <div className="journal__entry-body">
         <p className="journal__entry-title">Un nuevo día</p>
-        <p className="journal__entry-content">If it looks like chicken, tastes like chicken, and feels like chicken but Chuck Norris says its beef, then it’s beef.</p>
+        <p className="journal__entry-content">
+          If it looks like chicken, tastes like chicken, and feels like chicken
+          but Chuck Norris says its beef, then it’s beef.
+        </p>
       </div>
       <div className="journal__entry-date-box">
-          <span>Friday</span>
-          <h4>03</h4>
-        </div>
+        <span>Friday</span>
+        <h4>03</h4>
+      </div>
     </div>
   );
 }

@@ -4,17 +4,6 @@
   background-color: $primary;
 }
 
-h4 {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  margin: 0;
-  font-weight: 200;
-  opacity: 1;
-  font-family: sans-serif;
-  color: #fff;
-}
-
 #loader {
   animation: animate 1.5s linear infinite;
   clip: rect(0, 80px, 80px, 40px);
