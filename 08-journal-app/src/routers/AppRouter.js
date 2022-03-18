@@ -7,6 +7,8 @@ import { AuthRouter } from './AuthRouter';
 import { login } from '../actions/auth';
 import PublicRoute from './PublicRoute';
 import PrivateRoute from "./PrivateRoute";
+import { loadNotes } from '../helpers/loadNotes';
+import { setNotes } from '../actions/notes';
 
 export const AppRouter = () => {
 
@@ -20,10 +22,13 @@ export const AppRouter = () => {
   useEffect(() => {
     //Es un observable para ,irar los cambios del state
     const auth = getAuth();
-    onAuthStateChanged(auth,(user) => {
+    onAuthStateChanged(auth, async(user) => {
       if (user?.uid) {
         dispatch(login(user.uid, user.displayName));
         setIsLoggedIn(true);
+        //disparamos loadNotes en el primer momento que tenémos el id de usuario para accesar a sus notas
+        const notes = await loadNotes(user.uid);
+        dispatch(setNotes(notes));
       } else {
         setIsLoggedIn(false);
       }
