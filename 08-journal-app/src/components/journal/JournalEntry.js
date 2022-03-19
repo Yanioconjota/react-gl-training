@@ -1,26 +1,44 @@
 import React from 'react';
+import moment from 'moment';
+import { useDispatch } from 'react-redux';
+import { activeNote } from '../../actions/notes';
 
-export const JournalEntry = () => {
+export const JournalEntry = ({ id, body, date, title, url }) => {
+
+  const dispatch = useDispatch();
+
+  const noteDate = moment(date);
+
+  const note = { id, body, date, title, url };
+
+  const handleEntryClick = () => {
+    dispatch(activeNote(id, note));
+  };
+
   return (
-    <div className="journal__entry">
-      <div
+    <div className="journal__entry" onClick={ handleEntryClick }>
+      {
+        url &&
+        (<div
         className="journal__entry-picture"
         style={{
           backgroundSize: "cover",
           backgroundImage:
-            "url(https://as01.epimg.net/meristation/imagenes/2022/02/20/noticias/1645347632_156651_1645347771_noticia_normal.jpg)",
+            `url(${url})`,
         }}
-      ></div>
+        ></div>)
+      }
       <div className="journal__entry-body">
-        <p className="journal__entry-title">Un nuevo día</p>
+        <p className="journal__entry-title">
+          { title }
+        </p>
         <p className="journal__entry-content">
-          If it looks like chicken, tastes like chicken, and feels like chicken
-          but Chuck Norris says its beef, then it’s beef.
+          { body }
         </p>
       </div>
       <div className="journal__entry-date-box">
-        <span>Friday</span>
-        <h4>03</h4>
+        <span>{ noteDate.format('dddd') }</span>
+        <h4>{ noteDate.format('Do') }</h4>
       </div>
     </div>
   );

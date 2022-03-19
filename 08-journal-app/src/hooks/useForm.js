@@ -11,8 +11,9 @@ export const useForm = (initialState = {}) => {
     });
   };
 
-  const reset = () => {
-    setValues(initialState);
+  //Para seleccionar la nota activa tenemos que pasarle el nuevo state el reset, si no lo recibe manda el initialState que le pasamos por defecto al newFormState
+  const reset = (newFormState = initialState) => {
+    setValues(newFormState);
   };
 
   return [values, handleInputChange, reset];
