@@ -7,8 +7,7 @@ import { AuthRouter } from './AuthRouter';
 import { login } from '../actions/auth';
 import PublicRoute from './PublicRoute';
 import PrivateRoute from "./PrivateRoute";
-import { loadNotes } from '../helpers/loadNotes';
-import { setNotes } from '../actions/notes';
+import { startLoadingNotes } from '../actions/notes';
 
 export const AppRouter = () => {
 
@@ -26,9 +25,8 @@ export const AppRouter = () => {
       if (user?.uid) {
         dispatch(login(user.uid, user.displayName));
         setIsLoggedIn(true);
-        //disparamos loadNotes en el primer momento que tenémos el id de usuario para accesar a sus notas
-        const notes = await loadNotes(user.uid);
-        dispatch(setNotes(notes));
+        //disparamos startLoadingNotes en el primer momento que tenémos el id de usuario para accesar a sus notas
+        dispatch(startLoadingNotes(user.uid));
       } else {
         setIsLoggedIn(false);
       }
