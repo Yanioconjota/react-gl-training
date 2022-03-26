@@ -48,6 +48,15 @@ export const notesReducer = (state = initialState, action) => {
             : note
         )
       }
+    
+      case types.notesDelete:
+        return {
+          ///recibimos el state y purgamos la nota activa
+          ...state,
+          active: null,
+          //sacamos la nota cuyo id coincida con eñ que viene del payload
+          notes: state.notes.filter(note => note.id !== action.payload)
+        }
   
     default:
       return state;

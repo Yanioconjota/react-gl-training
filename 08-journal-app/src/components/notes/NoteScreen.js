@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from "react-redux";
-import { activeNote } from '../../actions/notes';
+import { activeNote, startDeletingNote } from "../../actions/notes";
 import { useForm } from '../../hooks/useForm';
 import { NotesAppBar } from './NotesAppBar';
 
@@ -16,7 +16,11 @@ export const NoteScreen = () => {
   //Con useRef alamacenamos una variable que puede mutar y no redibujará el componente si cambia
   const activeId = useRef( note.id );
 
-  const { body, title, url } = formValues;
+  const { body, title } = formValues;
+
+  const handleDelete = () => {
+    dispatch(startDeletingNote(note.id));
+  };
 
   //El useEffect se dispara si y solo si el note.id cambió
   useEffect(() => {
@@ -64,6 +68,10 @@ export const NoteScreen = () => {
           </div>
         )}
       </div>
+      <button className="btn btn-danger"
+              onClick={ handleDelete }>
+        Delete
+      </button>
     </div>
   );
 };

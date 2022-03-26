@@ -23,6 +23,7 @@ export const startNewNote = () => {
   };
 };
 
+//Acción sincrona --> Devuelve el objeto
 export const activeNote = (id, note) => ({
   type: types.notesActive,
   payload: {
@@ -38,6 +39,7 @@ export const startLoadingNotes = (uid) => {
   }
 };
 
+//Acción sincrona --> Devuelve el objeto
 export const setNotes = ( notes ) => ({
   type: types.notesLoad,
   payload: notes
@@ -112,3 +114,19 @@ export const startUploadingNote = (file) => {
     Swal.close();
   };
 };
+
+export const startDeletingNote = (id) => {
+  return async( dispatch, getState ) => {
+    const { uid } = getState().auth;
+    await db.doc(`${ uid }/journal/notes/${ id }`).delete();
+
+    dispatch(deleteNote(id));
+  };
+};
+
+//Acción sincrona --> Devuelve el objeto
+//Debe agregarse al reducer
+export const deleteNote = (id) => ({
+  type: types.notesDelete,
+  payload: id,
+});

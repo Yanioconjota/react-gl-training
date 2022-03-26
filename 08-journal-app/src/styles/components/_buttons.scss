@@ -35,6 +35,14 @@
   }
 }
 
+.btn-danger {
+  background-color: $danger;
+
+  &:hover {
+    background-color: darken($color: $danger, $amount: 20);
+  }
+}
+
 //Google button
 
 .google-btn {
