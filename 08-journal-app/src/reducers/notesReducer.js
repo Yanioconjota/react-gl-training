@@ -57,6 +57,13 @@ export const notesReducer = (state = initialState, action) => {
           //sacamos la nota cuyo id coincida con eñ que viene del payload
           notes: state.notes.filter(note => note.id !== action.payload)
         }
+
+      case types.notesLogoutCleaning:
+        return {
+          ...state,
+          active: null,
+          notes: []
+        }
   
     default:
       return state;

@@ -10,6 +10,7 @@ import {
   updateProfile,
 } from "../firebase/firebase-config";
 import { finishLoading, startLoading } from "./ui";
+import { notesLogout } from "./notes";
 
 //gracias al midleware thunk-redux tenemos acceso al dispatch dentro del return
 export const startLoginWithEmailPassword = (email, password) => {
@@ -70,6 +71,7 @@ export const startLogout = () => {
     const auth = getAuth();
     await signOut(auth);
     dispatch(logout());
+    dispatch(notesLogout());
   };
 };
 
