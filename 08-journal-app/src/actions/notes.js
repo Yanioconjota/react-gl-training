@@ -19,9 +19,22 @@ export const startNewNote = () => {
     //doc hace referencia al documento de una colección de firestore y devuelve una promesa
     const doc = await db.collection(`${uid}/journal/notes`).add( newNote );
 
+    //Selecciona la nota en NoteScreen
     dispatch(activeNote(doc.id, newNote));
+    //Actualiza el sidebar con la nueva nota
+    dispatch(addNewNote(doc.id, newNote));
   };
 };
+
+//Acción sincrona --> Devuelve el objeto
+//Agrega la nota al sidebar al momento de crearla
+export const addNewNote = (id, note) => ({
+  type: types.notesAddNew,
+  payload: {
+    //recibimos el id y la nota que puede que venga sin id
+    id, ...note
+  }
+});
 
 //Acción sincrona --> Devuelve el objeto
 export const activeNote = (id, note) => ({

@@ -33,6 +33,13 @@ export const notesReducer = (state = initialState, action) => {
         }
       }
 
+    case types.notesAddNew:
+      return {
+        ...state,
+        //recibimos el activeNote en el payload y la colocamos en la primera posición del array de notas
+        notes: [ action.payload, ...state.notes ]
+      }
+
     case types.notesLoad:
       return {
         ...state,
