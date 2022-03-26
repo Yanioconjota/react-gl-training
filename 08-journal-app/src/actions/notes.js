@@ -92,6 +92,23 @@ export const startUploadingNote = (file) => {
 
     const fileUrl = await fileUpload(file);
 
-    console.log(fileUrl)
+    Swal.fire({
+      title: 'Uploading...',
+      text: 'Please wait',
+      icon: 'info',
+      allowOutsideClick: false,
+      onBeforeOpen () {
+        Swal.showLoading();
+      },
+      timer: 2000
+    });
+    
+    //Actualizamos el url de la nota activa que es donde guarda la imagen
+    activeNote.url = fileUrl;
+    //hacemos el dispatch de la acción startSaveNote con la nota activa y la url de la imagen actualizada
+    dispatch( startSaveNote(activeNote) );
+
+    //Cierra el modal sweetalert cuando se termina de subir la imagen
+    Swal.close();
   };
 };

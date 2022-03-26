@@ -16,7 +16,7 @@ export const NoteScreen = () => {
   //Con useRef alamacenamos una variable que puede mutar y no redibujará el componente si cambia
   const activeId = useRef( note.id );
 
-  const { body, title } = formValues;
+  const { body, title, url } = formValues;
 
   //El useEffect se dispara si y solo si el note.id cambió
   useEffect(() => {
@@ -46,26 +46,23 @@ export const NoteScreen = () => {
           className="notes__title-input"
           autoComplete="off"
           name="title"
-          value={ title }
-          onChange={ handleInputChange }
+          value={title}
+          onChange={handleInputChange}
         />
 
         <textarea
           placeholder="What happened today?"
           className="notes__textarea"
           name="body"
-          value={ body }
-          onChange={ handleInputChange }
+          value={body}
+          onChange={handleInputChange}
         ></textarea>
 
-        { (note.url) &&
+        {note.url && (
           <div className="notes__image">
-            <img
-              src="https://i0.wp.com/hipertextual.com/wp-content/uploads/2021/10/the-batman-scaled.jpg?fit=2560%2C1587&ssl=1"
-              alt="the batman"
-            />
+            <img src={note.url} alt={title} />
           </div>
-        }
+        )}
       </div>
     </div>
   );
