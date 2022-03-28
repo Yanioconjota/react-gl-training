@@ -3,7 +3,7 @@ import { db } from "../firebase/firebase-config"
 export const loadNotes = async (uid) => {
   //Trae los documentos guardados dentro de notes que corresponden al id que recibe
   //Devuelve un QuerySnapshot
-  const notesSnap = await db.collection(`${uid}/journal/notes`).get();
+  const notesSnap = await db.collection(`${uid}/journal/notes`).orderBy('date', 'desc').get();
 
   const notes = [];
 
