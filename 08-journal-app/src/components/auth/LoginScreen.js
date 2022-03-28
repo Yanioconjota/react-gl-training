@@ -49,7 +49,7 @@ export const LoginScreen = () => {
   };
 
   return (
-    <>
+    <div className="animate__animated animate__fadeIn">
       <h3 className="auth__title">Login</h3>
       <form onSubmit={ handleLogin }>
         { msgError &&
@@ -90,7 +90,7 @@ export const LoginScreen = () => {
             </div>
 
             <p className="btn-text">
-              <b>Sign in with google</b>
+              Sign in with google
             </p>
           </div>
 
@@ -99,6 +99,6 @@ export const LoginScreen = () => {
           Create new account
         </Link>
       </form>
-    </>
+    </div>
   );
 }

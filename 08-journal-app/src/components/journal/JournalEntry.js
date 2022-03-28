@@ -16,7 +16,7 @@ export const JournalEntry = ({ id, body, date, title, url }) => {
   };
 
   return (
-    <div className="journal__entry" onClick={ handleEntryClick }>
+    <div className="journal__entry animate__animated animate__fadeIn" onClick={ handleEntryClick }>
       {
         url &&
         (<div
