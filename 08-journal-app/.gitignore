@@ -18,6 +18,11 @@
 .env.test.local
 .env.production.local
 
+#Si el proyecto es privado debes descomentar las siguientes líneas
+#.env.development
+#.env.test
+#.env.production
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
