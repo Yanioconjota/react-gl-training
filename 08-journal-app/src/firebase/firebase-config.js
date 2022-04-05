@@ -18,6 +18,7 @@ import {
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+//Config de dev/prod
 const firebaseConfig = {
   apiKey: "AIzaSyB4GVCMhYov_WXfhPeOWK_C-S9bzmlb6_4",
   authDomain: "react-app-cursos-c1ab7.firebaseapp.com",
@@ -27,8 +28,27 @@ const firebaseConfig = {
   appId: "1:514107416359:web:cfb9b8b30a8d8d3f9a9302",
 };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const firebaseConfigTesting = {
+  apiKey: "AIzaSyBbSxQSRThz0nSjzhMV0zfoV6H-2hZd3pY",
+  authDomain: "react-app-curso-testing-fe9b8.firebaseapp.com",
+  projectId: "react-app-curso-testing-fe9b8",
+  storageBucket: "react-app-curso-testing-fe9b8.appspot.com",
+  messagingSenderId: "797641460323",
+  appId: "1:797641460323:web:1b01159f87031253e94656",
+};
+
+//console.log(process.env);
+
+//nos fijamos en que ambiente estamos a través de las variables globales de entorno
+if (process.env.NODE_ENV === 'test') {
+  //testing
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfigTesting);
+} else {
+  // dev/prod
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+}
 
 const db = firebase.firestore();
 const googleAuthProvider = new GoogleAuthProvider();
