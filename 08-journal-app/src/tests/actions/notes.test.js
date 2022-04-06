@@ -10,6 +10,9 @@ import thunk from "redux-thunk";
 //-fin imports del mockStore
 import { db } from "../../firebase/firebase-config";
 
+//fileSystem para pruebas de actualizacion de URL
+import * as fs from "fs";
+
 import {
   startNewNote,
   activeNote,
@@ -20,19 +23,35 @@ import {
   startSaveNote,
   startDeletingNote,
   deleteNote,
-  notesLogout
+  notesLogout,
+  startUploadingNote,
 } from "../../actions/notes";
 import { types } from "../../types/types";
+//Debe estar importado el helper pero la resúesta será mockeada
+import { fileUpload } from "../../helpers/fileUpload";
+
+//Mock de fileUplad para pruebas de actualización de URL de la imagen de la nota
+jest.mock('../../helpers/fileUpload', () => ({
+    fileUpload: jest.fn()
+}));
 
 //*3- config del muckStore
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
 //creamos un estado inicial
+//El ID de la nota activa es real porque lo usaremos en la prueba de actualización de URL
 const initState = {
   auth: {
     uid: "testingUID",
   },
+  notes: {
+    active: {
+      id: 'HwQaj6oqp47KwzbM7d51',
+      title: 'Hola',
+      body: 'Mundo!'
+    }
+  }
 };
 
 //hacemos el mock del estado del store actual
@@ -220,8 +239,24 @@ describe("Pruebas con notes actions", () => {
       type: types.notesDelete,
       payload: id
     });
-    
-
   });
+
+  test('startUploadingNote debe actualizar el url del entry', async() => {
+    //const file = new File([], "foto.jpg");
+    // ReferenceError: File is not defined
+    fileUpload.mockReturnValue("https://hola-mundo.com");
+    fs.writeFileSync("foto.jpg", "");
+    const file = fs.readFileSync("foto.jpg");
+    await store.dispatch(startUploadingNote(file));
+
+    const docRef = await db
+      .doc(`testingUID/journal/notes/HwQaj6oqp47KwzbM7d51`)
+      .get();
+    
+    console.log(docRef.data());
+
+    expect(docRef.data().url).toBe('https://hola-mundo.com');
+  });
+
 
 });
