@@ -19,6 +19,8 @@ import {
   startLoadingNotes,
   startSaveNote,
   startDeletingNote,
+  deleteNote,
+  notesLogout
 } from "../../actions/notes";
 import { types } from "../../types/types";
 
@@ -99,6 +101,8 @@ describe("Pruebas con notes actions", () => {
     const activeNoteMock = activeNote(docId, noteMock);
     const setNotesMock = setNotes([noteMock]);
     const refreshNoteMock = refreshNote(docId, noteMock);
+    const deleteNoteMock = deleteNote(docId);
+    const notesLogoutMock = notesLogout();  
 
     expect(addNewNoteMock).toEqual({
       type: types.notesAddNew,
@@ -131,6 +135,16 @@ describe("Pruebas con notes actions", () => {
         }
       },
     });
+
+    expect(deleteNoteMock).toEqual({
+      type: types.notesDelete,
+      payload: docId,
+    });
+
+    expect(notesLogoutMock).toEqual({
+      type: types.notesLogoutCleaning
+    });
+
   });
 
   test("startLoadingNotes debe cargar las notas", async () => {
