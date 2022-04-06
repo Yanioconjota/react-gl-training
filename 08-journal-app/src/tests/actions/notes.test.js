@@ -17,7 +17,8 @@ import {
   setNotes,
   refreshNote,
   startLoadingNotes,
-  startSaveNote
+  startSaveNote,
+  startDeletingNote,
 } from "../../actions/notes";
 import { types } from "../../types/types";
 
@@ -55,7 +56,7 @@ describe("Pruebas con notes actions", () => {
 
     //con ese dispatch de startNewNote se disparan las acciones activeNote y addNewNote y las obtenemos mediante:
     const actions = store.getActions();
-    console.log(actions);
+    //console.log(actions);
 
     //Nuesro expect debe recibir un objeto con esta estructura de payloadMock, donde claramente el id y la fecha van a cambiar.
     const payloadMock = {
@@ -139,7 +140,7 @@ describe("Pruebas con notes actions", () => {
     //las obtenemos con el getActions
     const actions = store.getActions();
 
-    console.log(actions);
+    //console.log(actions);
     //Esperamos que tenga la siguiente estructura
     expect(actions[0]).toEqual({
       type: types.notesLoad,
@@ -155,7 +156,7 @@ describe("Pruebas con notes actions", () => {
       date: expect.any(Number),
     };
 
-    console.log(actions[0].payload[0]);
+    //console.log(actions[0].payload[0]);
 
     expect(actions[0].payload[0]).toMatchObject(expectedNote);
 
@@ -173,15 +174,15 @@ describe("Pruebas con notes actions", () => {
 
     const actions = store.getActions();
 
-    console.log(actions);
+    //console.log(actions);
 
     //Es la referencia a la nota real en la db
     const docRef = await db.doc(`testingUID/journal/notes/${noteUpdate.id}`).get();
     
     //Accedemos al id de la nota en db
-    console.log(docRef.id);
+    //console.log(docRef.id);
     //El resto de las propiedades están guardadas en data
-    console.log(typeof docRef.data());
+    //console.log(typeof docRef.data());
     
     //Comparamos el titulo de noteUpdate con el de la nota de la db de testing
     expect(docRef.data().title).toBe(noteUpdate.title);
@@ -191,4 +192,22 @@ describe("Pruebas con notes actions", () => {
 
     expect(actions[0].type).toBe(types.notesUpdated);
   });
+
+  test('startDeletingNote debe borrar una nota', async() => {
+
+    //creamos la nota que vamos a borrar
+    await store.dispatch(startNewNote());
+    const actions = store.getActions();
+    const id = actions[0].payload.id;
+    await store.dispatch(startDeletingNote(id));
+    //console.log("startDeletingNote: ", actions);
+
+    expect(actions[2]).toEqual({
+      type: types.notesDelete,
+      payload: id
+    });
+    
+
+  });
+
 });
