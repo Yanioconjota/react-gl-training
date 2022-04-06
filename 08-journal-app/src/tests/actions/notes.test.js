@@ -172,8 +172,10 @@ describe("Pruebas con notes actions", () => {
     
     //Comparamos el titulo de noteUpdate con el de la nota de la db de testing
     expect(docRef.data().title).toBe(noteUpdate.title);
-    
+
     //Comparamos el body que recibe el payload de la acción con la nota actualizada en testing
     expect(actions[0].payload.note.body).toBe(docRef.data().body);
+
+    expect(actions[0].type).toBe(types.notesUpdated);
   });
 });
