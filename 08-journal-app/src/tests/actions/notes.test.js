@@ -24,7 +24,7 @@ import {
   startDeletingNote,
   deleteNote,
   notesLogout,
-  startUploadingNote,
+  startUploadingNote
 } from "../../actions/notes";
 import { types } from "../../types/types";
 //Debe estar importado el helper pero la resúesta será mockeada
@@ -32,7 +32,7 @@ import { fileUpload } from "../../helpers/fileUpload";
 
 //Mock de fileUplad para pruebas de actualización de URL de la imagen de la nota
 jest.mock('../../helpers/fileUpload', () => ({
-    fileUpload: jest.fn()
+  fileUpload: jest.fn()
 }));
 
 //*3- config del muckStore
@@ -242,20 +242,21 @@ describe("Pruebas con notes actions", () => {
   });
 
   test('startUploadingNote debe actualizar el url del entry', async() => {
-    //const file = new File([], "foto.jpg");
-    // ReferenceError: File is not defined
+    //Creamos el mock de la subida del archivo y la url mockeada que devuelve fileUpload
     fileUpload.mockReturnValue("https://hola-mundo.com");
     fs.writeFileSync("foto.jpg", "");
     const file = fs.readFileSync("foto.jpg");
+    //disparamos startUploadingNote
     await store.dispatch(startUploadingNote(file));
 
+    //que se haya subido la url a la db de testing 
     const docRef = await db
       .doc(`testingUID/journal/notes/HwQaj6oqp47KwzbM7d51`)
       .get();
-    
+
     console.log(docRef.data());
 
-    expect(docRef.data().url).toBe('https://hola-mundo.com');
+    expect(docRef.data().url).toBe("https://hola-mundo.com");
   });
 
 
