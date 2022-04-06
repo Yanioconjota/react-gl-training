@@ -15,6 +15,7 @@ import {
   activeNote,
   addNewNote,
   setNotes,
+  refreshNote,
   startLoadingNotes,
   startSaveNote
 } from "../../actions/notes";
@@ -96,6 +97,7 @@ describe("Pruebas con notes actions", () => {
     const addNewNoteMock = addNewNote(docId, noteMock);
     const activeNoteMock = activeNote(docId, noteMock);
     const setNotesMock = setNotes([noteMock]);
+    const refreshNoteMock = refreshNote(docId, noteMock);
 
     expect(addNewNoteMock).toEqual({
       type: types.notesAddNew,
@@ -116,6 +118,17 @@ describe("Pruebas con notes actions", () => {
     expect(setNotesMock).toEqual({
       type: types.notesLoad,
       payload: [noteMock]
+    });
+
+    expect(refreshNoteMock).toEqual({
+      type: types.notesUpdated,
+      payload: {
+        id: docId,
+        note: {
+          id: docId,
+          ...noteMock
+        }
+      },
     });
   });
 
