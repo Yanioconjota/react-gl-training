@@ -16,6 +16,7 @@ import {
   addNewNote,
   setNotes,
   startLoadingNotes,
+  startSaveNote
 } from "../../actions/notes";
 import { types } from "../../types/types";
 
@@ -145,5 +146,34 @@ describe("Pruebas con notes actions", () => {
 
     expect(actions[0].payload[0]).toMatchObject(expectedNote);
 
+  });
+
+  test("startSaveNote debe actualizar la nota", async() => {
+    //Utilizaremos un ID real de la db de testing para verificar los cambios
+    const noteUpdate = {
+      id: "NAABKijgpcbMLjMlZ0I2",
+      title: "#ChuckNorrisFact",
+      body: "If Chuck Norris makes a joke about Jada Pinkett, Will Smith will slap himself"
+    };
+
+    await store.dispatch(startSaveNote(noteUpdate));
+
+    const actions = store.getActions();
+
+    console.log(actions);
+
+    //Es la referencia a la nota real en la db
+    const docRef = await db.doc(`testingUID/journal/notes/${noteUpdate.id}`).get();
+    
+    //Accedemos al id de la nota en db
+    console.log(docRef.id);
+    //El resto de las propiedades están guardadas en data
+    console.log(typeof docRef.data());
+    
+    //Comparamos el titulo de noteUpdate con el de la nota de la db de testing
+    expect(docRef.data().title).toBe(noteUpdate.title);
+    
+    //Comparamos el body que recibe el payload de la acción con la nota actualizada en testing
+    expect(actions[0].payload.note.body).toBe(docRef.data().body);
   });
 });
