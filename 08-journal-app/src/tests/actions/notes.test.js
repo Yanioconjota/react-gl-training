@@ -30,9 +30,18 @@ import { types } from "../../types/types";
 //Debe estar importado el helper pero la resúesta será mockeada
 import { fileUpload } from "../../helpers/fileUpload";
 
+//import de sweetalert para mockear la llamada al modal
+import Swal from "sweetalert2";
+
 //Mock de fileUplad para pruebas de actualización de URL de la imagen de la nota
 jest.mock('../../helpers/fileUpload', () => ({
   fileUpload: jest.fn()
+}));
+
+//spy de las funciones de sweetalert
+jest.mock("sweetalert2", () => ({
+  fire: jest.fn(),
+  close: jest.fn()
 }));
 
 //*3- config del muckStore
@@ -254,9 +263,11 @@ describe("Pruebas con notes actions", () => {
       .doc(`testingUID/journal/notes/HwQaj6oqp47KwzbM7d51`)
       .get();
 
-    console.log(docRef.data());
-
     expect(docRef.data().url).toBe("https://hola-mundo.com");
+
+    //Esperamos que se dispare el modal y que se cierre
+    expect(Swal.fire).toHaveBeenCalled();
+    expect(Swal.close).toHaveBeenCalled();
   });
 
 
