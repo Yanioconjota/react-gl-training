@@ -27,7 +27,7 @@
   "scripts": {
     "start": "set PORT=3008 && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --detectOpenHandles",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
