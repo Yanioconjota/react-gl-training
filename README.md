@@ -9,3 +9,7 @@
 [Ejemplo 2 -- Fetch API con Axios y custom Hooks](http://janioisacura.com/rickandmorty/)
 
 Practicamente en todos los proyectos, aparte de React, se utilizan librerías como bootstrap y node-sass, dentro de cada archivo siempre encotrarás comentarios indicando cómo funciona e interactua el código.
+
+## React - REDUX
+
+![redux](http://janioisacura.com/pics/react/graficoPatronRedux.png)
