@@ -146,4 +146,4 @@ export const deleteNote = (id) => ({
 
 export const notesLogout = () => ({
   type: types.notesLogoutCleaning
-})
+});
